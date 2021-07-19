@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil_v5\ARM\INC\Philips" -o "odd_even.o" --omf_browse "odd_even.crf" --depend "odd_even.d" "odd_even.c"

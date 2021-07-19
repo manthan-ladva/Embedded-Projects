@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC\Philips" -o "rfid_main.o" --omf_browse "rfid_main.crf" --depend "rfid_main.d" "rfid_main.c"

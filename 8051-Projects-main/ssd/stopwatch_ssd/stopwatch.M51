@@ -1,0 +1,239 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/08/2021  12:34:41  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE stopwatch.obj TO stopwatch RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  stopwatch.obj (STOPWATCH)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
+
+
+LINK MAP OF MODULE:  stopwatch (STOPWATCH)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0036H     UNIT         _DATA_GROUP_
+            IDATA   003EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     01B5H     UNIT         ?PR?STOPWATCH?STOPWATCH
+            CODE    09B5H     0107H     UNIT         ?C?LIB_CODE
+            CODE    0ABCH     006BH     UNIT         ?PR?_STOP_END?STOPWATCH
+            CODE    0B27H     0053H     UNIT         ?PR?_DELAY?STOPWATCH
+            CODE    0B7AH     002BH     UNIT         ?PR?_SSD_SWITCH?STOPWATCH
+            CODE    0BA5H     001CH     UNIT         ?CO?STOPWATCH
+            CODE    0BC1H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0BCDH     0005H     UNIT         ?PR?MAIN?STOPWATCH
+
+
+
+OVERLAY MAP OF MODULE:   stopwatch (STOPWATCH)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?STOPWATCH
+
+?PR?MAIN?STOPWATCH                -----    -----
+  +--> ?PR?STOPWATCH?STOPWATCH
+
+?PR?STOPWATCH?STOPWATCH           0008H    0026H
+  +--> ?CO?STOPWATCH
+  +--> ?PR?_STOP_END?STOPWATCH
+  +--> ?PR?_SSD_SWITCH?STOPWATCH
+  +--> ?PR?_DELAY?STOPWATCH
+
+?PR?_STOP_END?STOPWATCH           002EH    0008H
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/08/2021  12:34:41  PAGE 2
+
+
+  +--> ?PR?_SSD_SWITCH?STOPWATCH
+  +--> ?PR?_DELAY?STOPWATCH
+
+?PR?_SSD_SWITCH?STOPWATCH         0036H    0008H
+
+?PR?_DELAY?STOPWATCH              0036H    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  stopwatch (STOPWATCH)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        STOPWATCH
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.0       PUBLIC        SWITCH0
+  B:00A0H.1       PUBLIC        SWITCH1
+  B:00A0H.2       PUBLIC        SWITCH2
+  B:00A0H.3       PUBLIC        SWITCH3
+  D:00A8H         PUBLIC        IE
+  C:0B2DH         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:0BCDH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0B8AH         PUBLIC        _ssd_switch
+  C:0BA5H         SYMBOL        _?ix1000
+  C:0BB9H         SYMBOL        _?ix1001
+  C:0ACEH         PUBLIC        _stop_end
+  C:0800H         PUBLIC        stopwatch
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          L?0061
+  -------         ENDPROC       L?0061
+  -------         PROC          _DELAY
+  D:0036H         SYMBOL        time
+  -------         DO            
+  D:003AH         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0B2DH         LINE#         8
+  C:0B35H         LINE#         12
+  C:0B54H         LINE#         13
+  C:0B62H         LINE#         14
+  C:0B79H         LINE#         15
+  -------         ENDPROC       _DELAY
+  C:0B83H         SYMBOL        L?0057
+  C:0B86H         SYMBOL        L?0058
+  -------         PROC          L?0056
+  -------         ENDPROC       L?0056
+  C:0B83H         SYMBOL        L?0057
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/08/2021  12:34:41  PAGE 3
+
+
+  C:0B86H         SYMBOL        L?0058
+  -------         PROC          _SSD_SWITCH
+  D:0006H         SYMBOL        a
+  D:0082H         SYMBOL        b
+  D:0002H         SYMBOL        c
+  D:003CH         SYMBOL        d
+  C:0B8AH         LINE#         17
+  C:0B8AH         LINE#         18
+  C:0B90H         LINE#         19
+  C:0B96H         LINE#         20
+  C:0B9CH         LINE#         21
+  C:0BA4H         LINE#         22
+  -------         ENDPROC       _SSD_SWITCH
+  C:0AC8H         SYMBOL        L?0060
+  -------         PROC          L?0059
+  -------         ENDPROC       L?0059
+  C:0AC8H         SYMBOL        L?0060
+  -------         PROC          _STOP_END
+  D:0082H         SYMBOL        value1
+  D:0030H         SYMBOL        value2
+  D:0032H         SYMBOL        value3
+  D:0034H         SYMBOL        value4
+  C:0ACEH         LINE#         24
+  C:0AD8H         LINE#         25
+  C:0AE2H         LINE#         26
+  C:0AE5H         LINE#         27
+  C:0AE9H         LINE#         28
+  C:0AE9H         LINE#         30
+  C:0AECH         LINE#         31
+  C:0AEFH         LINE#         32
+  C:0AF3H         LINE#         33
+  C:0AF6H         LINE#         35
+  C:0B02H         LINE#         36
+  C:0B05H         LINE#         37
+  C:0B08H         LINE#         38
+  C:0B0BH         LINE#         40
+  C:0B1BH         LINE#         41
+  C:0B1EH         LINE#         42
+  C:0B23H         LINE#         43
+  C:0B26H         LINE#         44
+  -------         ENDPROC       _STOP_END
+  -------         PROC          STOPWATCH
+  -------         DO            
+  D:0008H         SYMBOL        value_array
+  D:001CH         SYMBOL        minute
+  D:0024H         SYMBOL        i
+  D:0026H         SYMBOL        j
+  D:0028H         SYMBOL        k
+  D:002AH         SYMBOL        l
+  D:002CH         SYMBOL        m
+  -------         ENDDO         
+  C:0800H         LINE#         46
+  C:0800H         LINE#         47
+  C:0813H         LINE#         48
+  C:0826H         LINE#         51
+  C:0839H         LINE#         52
+  C:0844H         LINE#         53
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/08/2021  12:34:41  PAGE 4
+
+
+  C:085CH         LINE#         54
+  C:0880H         LINE#         55
+  C:0899H         LINE#         56
+  C:08BDH         LINE#         57
+  C:08E3H         LINE#         58
+  C:08E3H         LINE#         59
+  C:08E3H         LINE#         60
+  C:08E8H         LINE#         61
+  C:08EDH         LINE#         62
+  C:08F2H         LINE#         63
+  C:08F7H         LINE#         64
+  C:0901H         LINE#         65
+  C:0907H         LINE#         66
+  C:090AH         LINE#         67
+  C:090AH         LINE#         69
+  C:090DH         LINE#         70
+  C:0913H         LINE#         71
+  C:0916H         LINE#         72
+  C:0919H         LINE#         74
+  C:0925H         LINE#         75
+  C:0930H         LINE#         76
+  C:0933H         LINE#         77
+  C:0936H         LINE#         79
+  C:0946H         LINE#         80
+  C:0951H         LINE#         81
+  C:0956H         LINE#         82
+  C:0959H         LINE#         83
+  C:096AH         LINE#         84
+  C:097EH         LINE#         85
+  C:0992H         LINE#         86
+  C:09A6H         LINE#         87
+  C:09B4H         LINE#         88
+  -------         ENDPROC       STOPWATCH
+  -------         PROC          MAIN
+  C:0BCDH         LINE#         90
+  C:0BCDH         LINE#         91
+  C:0BCDH         LINE#         92
+  C:0BD0H         LINE#         93
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        STOPWATCH
+
+  -------         MODULE        ?C?COPY
+  C:0A85H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?ULCMP
+  C:0AABH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 02BFH BYTE (34%) *
+******************************************************************************
+
+Program Size: data=63.0 xdata=0 code=981
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

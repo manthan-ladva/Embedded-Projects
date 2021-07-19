@@ -1,0 +1,20 @@
+*** Creating Trace Output File 'fiq_int.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"fiq_int.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "fiq_int.o" --strict --scatter "fiq_int.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\fiq_int.map" -o "fiq_int.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'fiq_int.axf'
+### ADS-LD Command File: 'fiq_int.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'fiq_int.lnp', Handle=0x00000280
+### Writing '.lnp' file
+### ADS-LD Command file 'fiq_int.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

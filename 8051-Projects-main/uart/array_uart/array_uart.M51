@@ -1,0 +1,135 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/24/2021  14:05:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE array_uart.obj TO array_uart RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  array_uart.obj (ARRAY_UART)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (STRLEN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  array_uart (ARRAY_UART)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     002BH     UNIT         ?DT?ARRAY_UART
+            IDATA   0033H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     002EH     UNIT         ?C_INITSEG
+            CODE    08BAH     002BH     UNIT         ?PR?MAIN?ARRAY_UART
+            CODE    08E5H     0019H     UNIT         ?C?LIB_CODE
+            CODE    08FEH     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    0913H     000CH     UNIT         ?PR?INIT_UART?ARRAY_UART
+            CODE    091FH     0008H     UNIT         ?PR?_TX?ARRAY_UART
+
+
+
+OVERLAY MAP OF MODULE:   array_uart (ARRAY_UART)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ARRAY_UART
+  +--> ?C_INITSEG
+
+?PR?MAIN?ARRAY_UART
+  +--> ?PR?_STRLEN?STRLEN
+  +--> ?PR?INIT_UART?ARRAY_UART
+  +--> ?PR?_TX?ARRAY_UART
+
+
+
+SYMBOL TABLE OF MODULE:  array_uart (ARRAY_UART)
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/24/2021  14:05:54  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ARRAY_UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:0008H         PUBLIC        table
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:0098H.1       PUBLIC        TI
+  D:00D8H         PUBLIC        CCON
+  C:08BAH         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  C:0913H         PUBLIC        init_uart
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  D:0032H         PUBLIC        i
+  C:091FH         PUBLIC        _tx
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          INIT_UART
+  C:0913H         LINE#         7
+  C:0913H         LINE#         8
+  C:0916H         LINE#         9
+  C:0919H         LINE#         10
+  C:091BH         LINE#         11
+  C:091EH         LINE#         12
+  -------         ENDPROC       INIT_UART
+  -------         PROC          _TX
+  D:0007H         SYMBOL        ch
+  C:091FH         LINE#         14
+  C:091FH         LINE#         15
+  C:0921H         LINE#         16
+  C:0924H         LINE#         17
+  C:0926H         LINE#         18
+  -------         ENDPROC       _TX
+  -------         PROC          MAIN
+  -------         DO            
+  D:0004H         SYMBOL        length
+  -------         ENDDO         
+  C:08BAH         LINE#         20
+  C:08BAH         LINE#         22
+  C:08C7H         LINE#         23
+  C:08CAH         LINE#         24
+  C:08D5H         LINE#         25
+  C:08DFH         LINE#         30
+  C:08E3H         LINE#         31
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ARRAY_UART
+
+  -------         MODULE        STRLEN
+  C:08FEH         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/24/2021  14:05:54  PAGE 3
+
+
+
+  -------         MODULE        ?C?CLDPTR
+  C:08E5H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006CH BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=52.0 xdata=0 code=298
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

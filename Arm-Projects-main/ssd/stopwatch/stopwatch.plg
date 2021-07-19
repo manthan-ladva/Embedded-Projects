@@ -1,0 +1,67 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\prolific\Desktop\Manthan Ladva\Arm-Projects\ssd\stopwatch\stopwatch.uvproj
+Project File Date:  04/07/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling stopwatch.c...
+stopwatch.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+stopwatch.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+stopwatch.c(25): warning:  #951-D: return type of function "main" must be "int"
+stopwatch.c(109): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1516 RO-data=32 RW-data=72 ZI-data=1256  
+FromELF: creating hex file...
+"stopwatch.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling stopwatch.c...
+stopwatch.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+stopwatch.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+stopwatch.c(25): warning:  #951-D: return type of function "main" must be "int"
+stopwatch.c(41): error:  #20: identifier "BREAK" is undefined
+stopwatch.c(110): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling stopwatch.c...
+stopwatch.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+stopwatch.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+stopwatch.c(25): warning:  #951-D: return type of function "main" must be "int"
+stopwatch.c(110): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1524 RO-data=32 RW-data=72 ZI-data=1256  
+FromELF: creating hex file...
+"stopwatch.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling stopwatch.c...
+stopwatch.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+stopwatch.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+stopwatch.c(25): warning:  #951-D: return type of function "main" must be "int"
+stopwatch.c(111): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1560 RO-data=32 RW-data=72 ZI-data=1256  
+FromELF: creating hex file...
+"stopwatch.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling stopwatch.c...
+stopwatch.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+stopwatch.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+stopwatch.c(25): warning:  #951-D: return type of function "main" must be "int"
+stopwatch.c(112): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1524 RO-data=32 RW-data=72 ZI-data=1256  
+FromELF: creating hex file...
+"stopwatch.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling stopwatch.c...
+stopwatch.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+stopwatch.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+stopwatch.c(25): warning:  #951-D: return type of function "main" must be "int"
+stopwatch.c(111): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1560 RO-data=32 RW-data=72 ZI-data=1256  
+FromELF: creating hex file...
+"stopwatch.axf" - 0 Error(s), 4 Warning(s).

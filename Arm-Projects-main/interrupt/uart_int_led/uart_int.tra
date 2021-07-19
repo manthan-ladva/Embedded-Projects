@@ -1,0 +1,20 @@
+*** Creating Trace Output File 'uart_int.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"uart_int.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "uart_int.o" --strict --scatter "uart_int.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\uart_int.map" -o "uart_int.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'uart_int.axf'
+### ADS-LD Command File: 'uart_int.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'uart_int.lnp', Handle=0x00000570
+### Writing '.lnp' file
+### ADS-LD Command file 'uart_int.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

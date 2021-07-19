@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\prolific\Desktop\Manthan Ladva\8051-Projects\stretch_shrink_led\stretch_shrink_led.uvproj
+Project File Date:  03/04/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling stretch_shrink_led.c...
+linking...
+Program Size: data=27.0 xdata=0 code=622
+creating hex file from "stretch_shrink_led"...
+"stretch_shrink_led" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling stretch_shrink_led.c...
+linking...
+Program Size: data=27.0 xdata=0 code=335
+creating hex file from "stretch_shrink_led"...
+"stretch_shrink_led" - 0 Error(s), 0 Warning(s).

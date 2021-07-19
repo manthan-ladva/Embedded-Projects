@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "increment_decrement.o" --strict --scatter "increment_decrement.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\increment_decrement.map" -o "increment_decrement.axf"

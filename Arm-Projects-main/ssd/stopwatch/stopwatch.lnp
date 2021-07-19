@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "stopwatch.o" --strict --scatter "stopwatch.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\stopwatch.map" -o "stopwatch.axf"

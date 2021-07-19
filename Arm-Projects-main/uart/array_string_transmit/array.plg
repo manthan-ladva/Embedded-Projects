@@ -1,0 +1,72 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\prolific\Desktop\Manthan Ladva\Arm-Projects\uart\array_string_transmit\array.uvproj
+Project File Date:  04/12/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling array.c...
+array.c(9): warning:  #1295-D: Deprecated declaration rx - give arg types
+array.c(21): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+array.c(49): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1028 RO-data=32 RW-data=44 ZI-data=1260  
+FromELF: creating hex file...
+"array.axf" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling array.c...
+array.c(9): warning:  #1295-D: Deprecated declaration rx - give arg types
+array.c(21): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+array.c(25): error:  #167: argument of type "char *" is incompatible with parameter of type "unsigned char"
+array.c(26): error:  #167: argument of type "char *" is incompatible with parameter of type "unsigned char"
+array.c(51): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling array.c...
+array.c(12): error:  #130: expected a "{"
+array.c(15): warning:  #12-D: parsing restarts here after previous syntax error
+array.c(22): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+array.c(45): error:  #247: function "Transmit_String" has already been defined
+array.c(59): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling array.c...
+array.c(12): warning:  #1295-D: Deprecated declaration rx - give arg types
+array.c(22): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+array.c(59): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1084 RO-data=32 RW-data=44 ZI-data=1260  
+FromELF: creating hex file...
+"array.axf" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling array.c...
+array.c(12): warning:  #1295-D: Deprecated declaration Receive - give arg types
+array.c(22): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+array.c(24): warning:  #223-D: function "tx" declared implicitly
+array.c(47): warning:  #223-D: function "tx" declared implicitly
+array.c(59): warning:  #1-D: last line of file ends without a newline
+linking...
+array.axf: Error: L6218E: Undefined symbol tx (referred from array.o).
+Target not created
+Build target 'Target 1'
+compiling array.c...
+array.c(12): warning:  #1295-D: Deprecated declaration Receive - give arg types
+array.c(22): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+array.c(47): warning:  #223-D: function "tx" declared implicitly
+array.c(59): warning:  #1-D: last line of file ends without a newline
+linking...
+array.axf: Error: L6218E: Undefined symbol tx (referred from array.o).
+Target not created
+Build target 'Target 1'
+compiling array.c...
+array.c(12): warning:  #1295-D: Deprecated declaration Receive - give arg types
+array.c(22): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+array.c(59): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1084 RO-data=32 RW-data=44 ZI-data=1260  
+FromELF: creating hex file...
+"array.axf" - 0 Error(s), 3 Warning(s).

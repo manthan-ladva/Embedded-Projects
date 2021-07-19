@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "biodata.o" "delay.o" "ssd.o" "uart.o" --strict --scatter "biodata.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\biodata.map" -o "biodata.axf"

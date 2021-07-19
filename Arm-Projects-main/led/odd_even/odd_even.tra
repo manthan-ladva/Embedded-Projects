@@ -1,0 +1,20 @@
+*** Creating Trace Output File 'odd_even.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"odd_even.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "odd_even.o" --strict --scatter "odd_even.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\odd_even.map" -o "odd_even.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'odd_even.axf'
+### ADS-LD Command File: 'odd_even.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'odd_even.lnp', Handle=0x0000076C
+### Writing '.lnp' file
+### ADS-LD Command file 'odd_even.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

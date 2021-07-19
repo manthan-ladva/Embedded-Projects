@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC\Philips" -o "string_pass.o" --omf_browse "string_pass.crf" --depend "string_pass.d" "string_pass.c"

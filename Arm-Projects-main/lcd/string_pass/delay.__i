@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC\Philips" -o "delay.o" --omf_browse "delay.crf" --depend "delay.d" "headers\delay.c"

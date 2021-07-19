@@ -1,0 +1,61 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\prolific\Desktop\Manthan Ladva\Arm-Projects\uart\string_transmit.uvproj
+Project File Date:  04/12/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling string_transmit.c...
+string_transmit.c(8): warning:  #223-D: function "init_arm" declared implicitly
+string_transmit.c(9): warning:  #223-D: function "init_uart" declared implicitly
+string_transmit.c(11): warning:  #223-D: function "tx" declared implicitly
+string_transmit.c(15): error:  #159: declaration is incompatible with previous "init_arm" (declared at line 8)
+string_transmit.c(21): error:  #159: declaration is incompatible with previous "init_uart" (declared at line 9)
+string_transmit.c(29): error:  #159: declaration is incompatible with previous "tx" (declared at line 11)
+string_transmit.c(41): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling string_transmit.c...
+string_transmit.c(7): warning:  #1295-D: Deprecated declaration rx - give arg types
+string_transmit.c(8): warning:  #1295-D: Deprecated declaration init_arm - give arg types
+string_transmit.c(47): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=924 RO-data=32 RW-data=4 ZI-data=1260  
+FromELF: creating hex file...
+"string_transmit.axf" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling string_transmit.c...
+string_transmit.c(7): warning:  #1295-D: Deprecated declaration rx - give arg types
+string_transmit.c(13): warning:  #223-D: function "init_arm" declared implicitly
+string_transmit.c(43): warning:  #1-D: last line of file ends without a newline
+linking...
+string_transmit.axf: Error: L6218E: Undefined symbol init_arm (referred from string_transmit.o).
+Target not created
+Build target 'Target 1'
+compiling string_transmit.c...
+string_transmit.c(7): warning:  #1295-D: Deprecated declaration rx - give arg types
+string_transmit.c(42): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=916 RO-data=32 RW-data=4 ZI-data=1260  
+FromELF: creating hex file...
+"string_transmit.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling string_transmit.c...
+string_transmit.c(7): warning:  #1295-D: Deprecated declaration rx - give arg types
+string_transmit.c(43): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=912 RO-data=32 RW-data=4 ZI-data=1260  
+FromELF: creating hex file...
+"string_transmit.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling string_transmit.c...
+string_transmit.c(7): warning:  #1295-D: Deprecated declaration rx - give arg types
+string_transmit.c(43): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=912 RO-data=32 RW-data=4 ZI-data=1260  
+FromELF: creating hex file...
+"string_transmit.axf" - 0 Error(s), 2 Warning(s).

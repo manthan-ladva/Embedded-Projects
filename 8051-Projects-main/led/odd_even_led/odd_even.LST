@@ -1,0 +1,77 @@
+C51 COMPILER V9.59.0.0   ODD_EVEN                                                          03/05/2021 15:34:47 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE ODD_EVEN
+OBJECT MODULE PLACED IN odd_even.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE odd_even.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<REG51F.H>
+   2          
+   3          void delay(unsigned long int time);
+   4          void odd_even(unsigned int no_of_led);
+   5          
+   6          void main(){
+   7   1              int new=0;
+   8   1              do{
+   9   2                      odd_even(8);
+  10   2                      P0 = 0xFF;
+  11   2                      delay(250);
+  12   2                      P0=0x00;
+  13   2                      delay(250);
+  14   2              }while(new>0);
+  15   1              while(1){}
+  16   1      }
+  17          
+  18          void odd_even(unsigned int no_of_led){
+  19   1              unsigned int i,a,half;
+  20   1              half = no_of_led/2;
+  21   1              a=1;
+  22   1              P0 = a;
+  23   1              delay(500);
+  24   1              for(i=1;i<half;i++){
+  25   2                      a = a<<2;
+  26   2                      P0 = a;
+  27   2                      delay(500);     
+  28   2              }
+  29   1      
+  30   1              a=2;
+  31   1              P0 = a;
+  32   1              delay(500);
+  33   1              for(i=1;i<half;i++){
+  34   2                      a = a<<2;
+  35   2                      P0 = a;
+  36   2                      delay(500);     
+  37   2              }
+  38   1      }
+  39          
+  40          
+  41          void delay(unsigned long int time){                       //Delay Function
+  42   1              unsigned long int i;
+  43   1              unsigned int j;
+  44   1      
+  45   1              for(i=0;i<time;i++){
+  46   2                      for(j=0;j<120;j++){
+  47   3                              
+  48   3                      }
+  49   2              }
+  50   1      }                                                                                                         
+             -                                                                                                                        
+             -               
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+C51 COMPILER V9.59.0.0   ODD_EVEN                                                          03/05/2021 15:34:47 PAGE 2   
+
+   CODE SIZE        =    259    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "rfid_main.o" "delay.o" "ssd.o" "uart.o" "lcd.o" "brains.o" --strict --scatter "rfid_login_system.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\rfid_login_system.map" -o "rfid_login_system.axf"

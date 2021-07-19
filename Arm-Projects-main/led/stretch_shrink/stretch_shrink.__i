@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil_v5\ARM\INC\Philips" -o "stretch_shrink.o" --omf_browse "stretch_shrink.crf" --depend "stretch_shrink.d" "stretch_shrink.c"

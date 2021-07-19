@@ -1,0 +1,23 @@
+*** Creating Trace Output File 'biodata.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"biodata.o"'
+### List of Objects: adding '"delay.o"'
+### List of Objects: adding '"ssd.o"'
+### List of Objects: adding '"uart.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "biodata.o" "delay.o" "ssd.o" "uart.o" --strict --scatter "biodata.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\biodata.map" -o "biodata.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'biodata.axf'
+### ADS-LD Command File: 'biodata.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'biodata.lnp', Handle=0x000002D4
+### Writing '.lnp' file
+### ADS-LD Command file 'biodata.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

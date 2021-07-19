@@ -1,0 +1,157 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/05/2021  15:34:47  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE odd_even.obj TO odd_even RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  odd_even.obj (ODD_EVEN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
+
+
+LINK MAP OF MODULE:  odd_even (ODD_EVEN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0010H     UNIT         _DATA_GROUP_
+            IDATA   0018H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0078H     UNIT         ?PR?_ODD_EVEN?ODD_EVEN
+            CODE    0878H     005BH     UNIT         ?PR?_DELAY?ODD_EVEN
+            CODE    08D3H     0030H     UNIT         ?PR?MAIN?ODD_EVEN
+            CODE    0903H     0011H     UNIT         ?C?LIB_CODE
+            CODE    0914H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   odd_even (ODD_EVEN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?ODD_EVEN
+
+?PR?MAIN?ODD_EVEN              0008H    0002H
+  +--> ?PR?_ODD_EVEN?ODD_EVEN
+  +--> ?PR?_DELAY?ODD_EVEN
+
+?PR?_ODD_EVEN?ODD_EVEN         000AH    0006H
+  +--> ?PR?_DELAY?ODD_EVEN
+
+?PR?_DELAY?ODD_EVEN            0010H    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  odd_even (ODD_EVEN)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/05/2021  15:34:47  PAGE 2
+
+
+  ----------------------------------
+
+  -------         MODULE        ODD_EVEN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0886H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:08D3H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0800H         PUBLIC        _odd_even
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        new
+  -------         ENDDO         
+  C:08D3H         LINE#         6
+  C:08D3H         LINE#         7
+  C:08D8H         LINE#         8
+  C:08D8H         LINE#         9
+  C:08DFH         LINE#         10
+  C:08E2H         LINE#         11
+  C:08E9H         LINE#         12
+  C:08ECH         LINE#         13
+  C:08F4H         LINE#         14
+  C:0901H         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         PROC          _ODD_EVEN
+  D:0006H         SYMBOL        no_of_led
+  -------         DO            
+  D:000AH         SYMBOL        i
+  D:000CH         SYMBOL        a
+  D:000EH         SYMBOL        half
+  -------         ENDDO         
+  C:0800H         LINE#         18
+  C:0800H         LINE#         20
+  C:0809H         LINE#         21
+  C:080FH         LINE#         22
+  C:0812H         LINE#         23
+  C:0815H         LINE#         24
+  C:0826H         LINE#         25
+  C:0833H         LINE#         26
+  C:0833H         LINE#         27
+  C:0836H         LINE#         28
+  C:0840H         LINE#         30
+  C:0846H         LINE#         31
+  C:0849H         LINE#         32
+  C:084CH         LINE#         33
+  C:085DH         LINE#         34
+  C:086AH         LINE#         35
+  C:086AH         LINE#         36
+  C:086DH         LINE#         37
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/05/2021  15:34:47  PAGE 3
+
+
+  C:0877H         LINE#         38
+  -------         ENDPROC       _ODD_EVEN
+  C:087EH         SYMBOL        L?0027
+  C:0882H         SYMBOL        L?0028
+  -------         PROC          L?0026
+  -------         ENDPROC       L?0026
+  C:087EH         SYMBOL        L?0027
+  C:0882H         SYMBOL        L?0028
+  -------         PROC          _DELAY
+  D:0010H         SYMBOL        time
+  -------         DO            
+  D:0014H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0886H         LINE#         41
+  C:088EH         LINE#         45
+  C:08ADH         LINE#         46
+  C:08B0H         LINE#         48
+  C:08BBH         LINE#         49
+  C:08D2H         LINE#         50
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        ODD_EVEN
+
+  -------         MODULE        ?C?ULCMP
+  C:0903H         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0103H BYTE (12%) *
+******************************************************************************
+
+Program Size: data=25.0 xdata=0 code=291
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

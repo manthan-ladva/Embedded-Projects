@@ -1,0 +1,108 @@
+C51 COMPILER V9.59.0.0   STRING_PASS                                                       04/02/2021 15:09:24 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE STRING_PASS
+OBJECT MODULE PLACED IN string_pass.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE string_pass.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REG51F.H>
+   2          
+   3          
+   4          //-------------------Switch Declaration---------------//
+   5          sbit bl = P0^0; //backlight
+   6          sbit rs = P0^1;
+   7          sbit rw = P0^2;
+   8          sbit en = P0^3;
+   9          
+  10          
+  11          //--------------------Function Declaration------------------//
+  12          void Delay(unsigned int time);
+  13          void lcd_string(unsigned char *ch);
+  14          void enable(void);
+  15          void init_lcd(void);
+  16          void display(unsigned char signal, unsigned char ch);
+  17          
+  18          
+  19          void main(){
+  20   1              init_lcd();
+  21   1              
+  22   1              display(0,0x83);
+  23   1              lcd_string("Welcome To");
+  24   1              display(0,0xC0);
+  25   1              lcd_string("Manthan Security");
+  26   1      
+  27   1              Delay(2000);
+  28   1              display(0,0x01);
+  29   1      
+  30   1              display(0,0x81);
+  31   1              lcd_string("Please Give Me");
+  32   1              display(0,0xC2);
+  33   1              lcd_string("Your ID Card");
+  34   1      
+  35   1              while(1);
+  36   1      }
+  37          
+  38          
+  39          void init_lcd(void){    
+  40   1              Delay(15);
+  41   1              bl=0;
+  42   1      //      display(0,0x03);
+  43   1      //      display(0,0x03);
+  44   1      //      display(0,0x03);
+  45   1              display(0,0x02);
+  46   1              display(0,0x28);
+  47   1              display(0,0x0C);
+  48   1              display(0,0x06);
+  49   1              display(0,0x01);
+  50   1      }
+  51          
+  52          
+  53          void display(unsigned char signal, unsigned char ch){
+  54   1              Delay(5);
+  55   1              rs=signal;
+C51 COMPILER V9.59.0.0   STRING_PASS                                                       04/02/2021 15:09:24 PAGE 2   
+
+  56   1              rw=0;
+  57   1              P0 = ((P0 & 0x0F) | (ch & 0xF0));
+  58   1              enable();
+  59   1              P0 = ((P0 & 0x0F) | ((ch<<4) & 0xF0));
+  60   1              enable();
+  61   1      }
+  62          
+  63          
+  64          void enable(void){
+  65   1              en=1;
+  66   1              Delay(3);
+  67   1              en=0;
+  68   1      }
+  69          
+  70          
+  71          void lcd_string(unsigned char *ch){
+  72   1              while(*ch != '\0'){
+  73   2                      display(1, *ch);
+  74   2                      ch++;
+  75   2              }
+  76   1      }
+  77          
+  78          
+  79          void Delay(unsigned int time) {             //Delay Function
+  80   1              unsigned int i,j;
+  81   1              for(i=0;i<time;i++)
+  82   1                      for(j=0;j<120;j++);
+  83   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    258    ----
+   CONSTANT SIZE    =     56    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

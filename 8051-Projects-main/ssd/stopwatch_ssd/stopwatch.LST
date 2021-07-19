@@ -1,0 +1,120 @@
+C51 COMPILER V9.59.0.0   STOPWATCH                                                         03/08/2021 12:34:41 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE STOPWATCH
+OBJECT MODULE PLACED IN stopwatch.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE stopwatch.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<REG51F.H>
+   2          
+   3          sbit SWITCH0 = P2^0;
+   4          sbit SWITCH1 = P2^1;
+   5          sbit SWITCH2 = P2^2;
+   6          sbit SWITCH3 = P2^3;
+   7          
+   8          void delay(unsigned long int time){                       //Delay Function
+   9   1              unsigned long int i;
+  10   1              unsigned int j;
+  11   1      
+  12   1              for(i=0;i<time;i++){
+  13   2                      for(j=0;j<120;j++){}
+  14   2              }
+  15   1      }
+  16          
+  17          void ssd_switch(unsigned int a, unsigned int b, unsigned int c, unsigned int d){
+  18   1              SWITCH0 = a;
+  19   1              SWITCH1 = b;
+  20   1              SWITCH2 = c;
+  21   1              SWITCH3 = d;
+  22   1      }
+  23          
+  24          void stop_end(unsigned int value1, unsigned int value2, unsigned int value3, unsigned int value4){
+  25   1              ssd_switch(1,1,1,0);
+  26   1              P0 = value1;
+  27   1              delay(1);
+  28   1              P0 = 0x00;
+  29   1      
+  30   1              ssd_switch(1,1,0,1);
+  31   1              P0 = value2;
+  32   1              delay(1);
+  33   1              P0 = 0x00;
+  34   1      
+  35   1              ssd_switch(1,0,1,1);
+  36   1              P0 = value3;
+  37   1              delay(1);
+  38   1              P0 = 0x00;
+  39   1      
+  40   1              ssd_switch(0,1,1,1);
+  41   1              P0 = value4;
+  42   1              delay(1);
+  43   1              P0 = 0x00;
+  44   1      }
+  45          
+  46          void stopwatch(){
+  47   1              unsigned int value_array[] = {0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xF6}; //0123456789
+  48   1              unsigned int minute[] = {0xFD, 0x61, 0xDB, 0xF3}; //0.1.2.3.
+  49   1              unsigned int i,j,k,l,m;
+  50   1      
+  51   1              for(i=0;i<4;i++){
+  52   2                      if(i==3){
+  53   3                              for(i=0;i<200;i++) stop_end(0xF3, 0xFC, 0xFC, 0xFC);
+  54   3                              for(i=0;i<200;i++) stop_end(0x00, 0x00, 0x00, 0x00);
+  55   3                              for(i=0;i<200;i++) stop_end(0xF3, 0xFC, 0xFC, 0xFC);
+C51 COMPILER V9.59.0.0   STOPWATCH                                                         03/08/2021 12:34:41 PAGE 2   
+
+  56   3                              for(i=0;i<200;i++) stop_end(0x00, 0x00, 0x00, 0x00);
+  57   3                              for(i=0;i<200;i++) stop_end(0xFF, 0xFF, 0xFF, 0xFF);
+  58   3                              break;  
+  59   3                      }
+  60   2                      for(j=0;j<6;j++){
+  61   3                              for(k=0;k<10;k++){
+  62   4                                      for(l=0;l<10;l++){
+  63   5                                              for(m=0;m<10;m++){
+  64   6                                                      ssd_switch(1,1,1,0);
+  65   6                                                      P0 = minute[i];
+  66   6                                                      delay(1);
+  67   6                                                      P0 = 0x00;
+  68   6                              
+  69   6                                                      ssd_switch(1,1,0,1);
+  70   6                                                      P0 = value_array[j];
+  71   6                                                      delay(1);
+  72   6                                                      P0 = 0x00;
+  73   6                              
+  74   6                                                      ssd_switch(1,0,1,1);
+  75   6                                                      P0 = value_array[k];
+  76   6                                                      delay(1);
+  77   6                                                      P0 = 0x00;
+  78   6                      
+  79   6                                                      ssd_switch(0,1,1,1);
+  80   6                                                      P0 = value_array[l];
+  81   6                                                      delay(1);
+  82   6                                                      P0 = 0x00;
+  83   6                                              }
+  84   5                                      }
+  85   4                              }
+  86   3                      }                                                                                                       
+             -                                                                                                              
+  87   2              }
+  88   1      }
+  89          
+  90          void main(){
+  91   1              while(1){
+  92   2                      stopwatch();
+  93   2              }
+  94   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    675    ----
+   CONSTANT SIZE    =     28    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      62
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

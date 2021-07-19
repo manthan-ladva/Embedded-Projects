@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "fiq_int.o" --strict --scatter "fiq_int.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\fiq_int.map" -o "fiq_int.axf"

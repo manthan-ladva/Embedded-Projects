@@ -1,0 +1,20 @@
+*** Creating Trace Output File 'marathon.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"marathon.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "marathon.o" --strict --scatter "marathon.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\marathon.map" -o "marathon.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'marathon.axf'
+### ADS-LD Command File: 'marathon.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'marathon.lnp', Handle=0x000003E8
+### Writing '.lnp' file
+### ADS-LD Command file 'marathon.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

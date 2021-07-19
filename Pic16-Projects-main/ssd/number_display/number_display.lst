@@ -1,0 +1,1546 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.70 build 5239 
+                                                                                               Wed Aug 11 11:40:22 2010
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 5239
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 5239"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F876A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           ;COMMON:	_main->_display_ssd
+    43                           ;COMMON:	_display_ssd->_ssd_switch
+    44                           ;BANK0:	_main->_display_ssd
+    45                           ;COMMON:	_display_ssd->_ssd_switch
+    46                           	FNCALL	_main,_tris
+    47                           	FNCALL	_main,_display_ssd
+    48                           	FNCALL	_display_ssd,_ssd_switch
+    49                           	FNCALL	_display_ssd,_delay
+    50                           	FNROOT	_main
+    51                           	global	_numbers
+    52                           psect	idataBANK0,class=CODE,space=0,delta=2
+    53                           global __pidataBANK0
+    54  06BD                     __pidataBANK0:
+    55                           	file	"C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_display\number_
+                                 display.c"
+    56                           	line	8
+    57                           
+    58                           ;initializer for _numbers
+    59  06BD  34FC               	retlw	0FCh
+    60  06BE  3400               	retlw	0
+    61                           
+    62  06BF  3460               	retlw	060h
+    63  06C0  3400               	retlw	0
+    64                           
+    65  06C1  34DA               	retlw	0DAh
+    66  06C2  3400               	retlw	0
+    67                           
+    68  06C3  34F2               	retlw	0F2h
+    69  06C4  3400               	retlw	0
+    70                           
+    71  06C5  3466               	retlw	066h
+    72  06C6  3400               	retlw	0
+    73                           
+    74  06C7  34B6               	retlw	0B6h
+    75  06C8  3400               	retlw	0
+    76                           
+    77  06C9  34BE               	retlw	0BEh
+    78  06CA  3400               	retlw	0
+    79                           
+    80  06CB  34E0               	retlw	0E0h
+    81  06CC  3400               	retlw	0
+    82                           
+    83  06CD  34FE               	retlw	0FEh
+    84  06CE  3400               	retlw	0
+    85                           
+    86  06CF  34F6               	retlw	0F6h
+    87  06D0  3400               	retlw	0
+    88                           
+    89                           	global	_ADCON0
+    90  001F                     _ADCON0  equ     31
+    91                           	global	_ADRESH
+    92  001E                     _ADRESH  equ     30
+    93                           	global	_CCP1CON
+    94  0017                     _CCP1CON  equ     23
+    95                           	global	_CCP2CON
+    96  001D                     _CCP2CON  equ     29
+    97                           	global	_CCPR1H
+    98  0016                     _CCPR1H  equ     22
+    99                           	global	_CCPR1L
+   100  0015                     _CCPR1L  equ     21
+   101                           	global	_CCPR2H
+   102  001C                     _CCPR2H  equ     28
+   103                           	global	_CCPR2L
+   104  001B                     _CCPR2L  equ     27
+   105                           	global	_FSR
+   106  0004                     _FSR  equ     4
+   107                           	global	_INDF
+   108  0000                     _INDF  equ     0
+   109                           	global	_INTCON
+   110  000B                     _INTCON  equ     11
+   111                           	global	_PCL
+   112  0002                     _PCL  equ     2
+   113                           	global	_PCLATH
+   114  000A                     _PCLATH  equ     10
+   115                           	global	_PIR1
+   116  000C                     _PIR1  equ     12
+   117                           	global	_PIR2
+   118  000D                     _PIR2  equ     13
+   119                           	global	_PORTA
+   120  0005                     _PORTA  equ     5
+   121                           	global	_PORTB
+   122  0006                     _PORTB  equ     6
+   123                           	global	_PORTC
+   124  0007                     _PORTC  equ     7
+   125                           	global	_RCREG
+   126  001A                     _RCREG  equ     26
+   127                           	global	_RCSTA
+   128  0018                     _RCSTA  equ     24
+   129                           	global	_SSPBUF
+   130  0013                     _SSPBUF  equ     19
+   131                           	global	_SSPCON
+   132  0014                     _SSPCON  equ     20
+   133                           	global	_STATUS
+   134  0003                     _STATUS  equ     3
+   135                           	global	_T1CON
+   136  0010                     _T1CON  equ     16
+   137                           	global	_T2CON
+   138  0012                     _T2CON  equ     18
+   139                           	global	_TMR0
+   140  0001                     _TMR0  equ     1
+   141                           	global	_TMR1H
+   142  000F                     _TMR1H  equ     15
+   143                           	global	_TMR1L
+   144  000E                     _TMR1L  equ     14
+   145                           	global	_TMR2
+   146  0011                     _TMR2  equ     17
+   147                           	global	_TXREG
+   148  0019                     _TXREG  equ     25
+   149                           	global	_ADCS0
+   150  00FE                     _ADCS0  equ     254
+   151                           	global	_ADCS1
+   152  00FF                     _ADCS1  equ     255
+   153                           	global	_ADDEN
+   154  00C3                     _ADDEN  equ     195
+   155                           	global	_ADGO
+   156  00FA                     _ADGO  equ     250
+   157                           	global	_ADIF
+   158  0066                     _ADIF  equ     102
+   159                           	global	_ADON
+   160  00F8                     _ADON  equ     248
+   161                           	global	_BCLIF
+   162  006B                     _BCLIF  equ     107
+   163                           	global	_CARRY
+   164  0018                     _CARRY  equ     24
+   165                           	global	_CCP1IF
+   166  0062                     _CCP1IF  equ     98
+   167                           	global	_CCP1M0
+   168  00B8                     _CCP1M0  equ     184
+   169                           	global	_CCP1M1
+   170  00B9                     _CCP1M1  equ     185
+   171                           	global	_CCP1M2
+   172  00BA                     _CCP1M2  equ     186
+   173                           	global	_CCP1M3
+   174  00BB                     _CCP1M3  equ     187
+   175                           	global	_CCP1X
+   176  00BD                     _CCP1X  equ     189
+   177                           	global	_CCP1Y
+   178  00BC                     _CCP1Y  equ     188
+   179                           	global	_CCP2IF
+   180  0068                     _CCP2IF  equ     104
+   181                           	global	_CCP2M0
+   182  00E8                     _CCP2M0  equ     232
+   183                           	global	_CCP2M1
+   184  00E9                     _CCP2M1  equ     233
+   185                           	global	_CCP2M2
+   186  00EA                     _CCP2M2  equ     234
+   187                           	global	_CCP2M3
+   188  00EB                     _CCP2M3  equ     235
+   189                           	global	_CCP2X
+   190  00ED                     _CCP2X  equ     237
+   191                           	global	_CCP2Y
+   192  00EC                     _CCP2Y  equ     236
+   193                           	global	_CHS0
+   194  00FB                     _CHS0  equ     251
+   195                           	global	_CHS1
+   196  00FC                     _CHS1  equ     252
+   197                           	global	_CHS2
+   198  00FD                     _CHS2  equ     253
+   199                           	global	_CKP
+   200  00A4                     _CKP  equ     164
+   201                           	global	_CMIF
+   202  006E                     _CMIF  equ     110
+   203                           	global	_CREN
+   204  00C4                     _CREN  equ     196
+   205                           	global	_DC
+   206  0019                     _DC  equ     25
+   207                           	global	_EEIF
+   208  006C                     _EEIF  equ     108
+   209+                          	global	_FERR
+   210+ 00C2                     _FERR  equ     194
+   211                           	global	_GIE
+   212  005F                     _GIE  equ     95
+   213+                          	global	_GODONE
+   214+ 00FA                     _GODONE  equ     250
+   215+                          	global	_INTE
+   216+ 005C                     _INTE  equ     92
+   217+                          	global	_INTF
+   218+ 0059                     _INTF  equ     89
+   219+                          	global	_IRP
+   220+ 001F                     _IRP  equ     31
+   221+                          	global	_OERR
+   222+ 00C1                     _OERR  equ     193
+   223                           	global	_PD
+   224  001B                     _PD  equ     27
+   225+                          	global	_PEIE
+   226+ 005E                     _PEIE  equ     94
+   227+                          	global	_RA0
+   228+ 0028                     _RA0  equ     40
+   229+                          	global	_RA1
+   230+ 0029                     _RA1  equ     41
+   231+                          	global	_RA2
+   232+ 002A                     _RA2  equ     42
+   233+                          	global	_RA3
+   234+ 002B                     _RA3  equ     43
+   235                           	global	_RA4
+   236  002C                     _RA4  equ     44
+   237+                          	global	_RA5
+   238+ 002D                     _RA5  equ     45
+   239                           	global	_RB0
+   240  0030                     _RB0  equ     48
+   241+                          	global	_RB1
+   242+ 0031                     _RB1  equ     49
+   243+                          	global	_RB2
+   244+ 0032                     _RB2  equ     50
+   245+                          	global	_RB3
+   246+ 0033                     _RB3  equ     51
+   247+                          	global	_RB4
+   248+ 0034                     _RB4  equ     52
+   249+                          	global	_RB5
+   250+ 0035                     _RB5  equ     53
+   251                           	global	_RB6
+   252  0036                     _RB6  equ     54
+   253                           	global	_RB7
+   254  0037                     _RB7  equ     55
+   255+                          	global	_RBIE
+   256+ 005B                     _RBIE  equ     91
+   257+                          	global	_RBIF
+   258+ 0058                     _RBIF  equ     88
+   259+                          	global	_RC0
+   260+ 0038                     _RC0  equ     56
+   261+                          	global	_RC1
+   262+ 0039                     _RC1  equ     57
+   263                           	global	_RC2
+   264  003A                     _RC2  equ     58
+   265+                          	global	_RC3
+   266+ 003B                     _RC3  equ     59
+   267                           	global	_RC4
+   268  003C                     _RC4  equ     60
+   269+                          	global	_RC5
+   270+ 003D                     _RC5  equ     61
+   271+                          	global	_RC6
+   272+ 003E                     _RC6  equ     62
+   273+                          	global	_RC7
+   274+ 003F                     _RC7  equ     63
+   275+                          	global	_RCIF
+   276+ 0065                     _RCIF  equ     101
+   277+                          	global	_RP0
+   278+ 001D                     _RP0  equ     29
+   279                           	global	_RP1
+   280  001E                     _RP1  equ     30
+   281+                          	global	_RX9
+   282+ 00C6                     _RX9  equ     198
+   283+                          	global	_RX9D
+   284+ 00C0                     _RX9D  equ     192
+   285+                          	global	_SPEN
+   286+ 00C7                     _SPEN  equ     199
+   287+                          	global	_SREN
+   288+ 00C5                     _SREN  equ     197
+   289+                          	global	_SSPEN
+   290+ 00A5                     _SSPEN  equ     165
+   291                           	global	_SSPIF
+   292  0063                     _SSPIF  equ     99
+   293+                          	global	_SSPM0
+   294+ 00A0                     _SSPM0  equ     160
+   295                           	global	_SSPM1
+   296  00A1                     _SSPM1  equ     161
+   297+                          	global	_SSPM2
+   298+ 00A2                     _SSPM2  equ     162
+   299+                          	global	_SSPM3
+   300+ 00A3                     _SSPM3  equ     163
+   301+                          	global	_SSPOV
+   302+ 00A6                     _SSPOV  equ     166
+   303+                          	global	_T0IE
+   304+ 005D                     _T0IE  equ     93
+   305+                          	global	_T0IF
+   306+ 005A                     _T0IF  equ     90
+   307                           	global	_T1CKPS0
+   308  0084                     _T1CKPS0  equ     132
+   309+                          	global	_T1CKPS1
+   310+ 0085                     _T1CKPS1  equ     133
+   311+                          	global	_T1OSCEN
+   312+ 0083                     _T1OSCEN  equ     131
+   313+                          	global	_T1SYNC
+   314+ 0082                     _T1SYNC  equ     130
+   315+                          	global	_T2CKPS0
+   316+ 0090                     _T2CKPS0  equ     144
+   317+                          	global	_T2CKPS1
+   318+ 0091                     _T2CKPS1  equ     145
+   319                           	global	_TMR0IE
+   320  005D                     _TMR0IE  equ     93
+   321+                          	global	_TMR0IF
+   322+ 005A                     _TMR0IF  equ     90
+   323                           	global	_TMR1CS
+   324  0081                     _TMR1CS  equ     129
+   325+                          	global	_TMR1IF
+   326+ 0060                     _TMR1IF  equ     96
+   327+                          	global	_TMR1ON
+   328+ 0080                     _TMR1ON  equ     128
+   329+                          	global	_TMR2IF
+   330+ 0061                     _TMR2IF  equ     97
+   331+                          	global	_TMR2ON
+   332+ 0092                     _TMR2ON  equ     146
+   333+                          	global	_TO
+   334+ 001C                     _TO  equ     28
+   335                           	global	_TOUTPS0
+   336  0093                     _TOUTPS0  equ     147
+   337+                          	global	_TOUTPS1
+   338+ 0094                     _TOUTPS1  equ     148
+   339+                          	global	_TOUTPS2
+   340+ 0095                     _TOUTPS2  equ     149
+   341+                          	global	_TOUTPS3
+   342+ 0096                     _TOUTPS3  equ     150
+   343                           	global	_TXIF
+   344  0064                     _TXIF  equ     100
+   345+                          	global	_WCOL
+   346+ 00A7                     _WCOL  equ     167
+   347                           	global	_ZERO
+   348  001A                     _ZERO  equ     26
+   349+                          	global	_ADCON1
+   350+ 009F                     _ADCON1  equ     159
+   351                           	global	_ADRESL
+   352  009E                     _ADRESL  equ     158
+   353+                          	global	_CMCON
+   354+ 009C                     _CMCON  equ     156
+   355+                          	global	_CVRCON
+   356+ 009D                     _CVRCON  equ     157
+   357+                          	global	_OPTION
+   358+ 0081                     _OPTION  equ     129
+   359+                          	global	_PCON
+   360+ 008E                     _PCON  equ     142
+   361+                          	global	_PIE1
+   362+ 008C                     _PIE1  equ     140
+   363                           	global	_PIE2
+   364  008D                     _PIE2  equ     141
+   365                           	global	_PR2
+   366  0092                     _PR2  equ     146
+   367+                          	global	_SPBRG
+   368+ 0099                     _SPBRG  equ     153
+   369+                          	global	_SSPADD
+   370+ 0093                     _SSPADD  equ     147
+   371                           	global	_SSPCON2
+   372  0091                     _SSPCON2  equ     145
+   373+                          	global	_SSPSTAT
+   374+ 0094                     _SSPSTAT  equ     148
+   375                           	global	_TRISA
+   376  0085                     _TRISA  equ     133
+   377+                          	global	_TRISB
+   378+ 0086                     _TRISB  equ     134
+   379                           	global	_TRISC
+   380  0087                     _TRISC  equ     135
+   381+                          	global	_TXSTA
+   382+ 0098                     _TXSTA  equ     152
+   383+                          	global	_ACKDT
+   384+ 048D                     _ACKDT  equ     1165
+   385+                          	global	_ACKEN
+   386+ 048C                     _ACKEN  equ     1164
+   387+                          	global	_ACKSTAT
+   388+ 048E                     _ACKSTAT  equ     1166
+   389+                          	global	_ADCS2
+   390+ 04FE                     _ADCS2  equ     1278
+   391                           	global	_ADFM
+   392  04FF                     _ADFM  equ     1279
+   393                           	global	_ADIE
+   394  0466                     _ADIE  equ     1126
+   395+                          	global	_BCLIE
+   396+ 046B                     _BCLIE  equ     1131
+   397+                          	global	_BF
+   398+ 04A0                     _BF  equ     1184
+   399+                          	global	_BOR
+   400+ 0470                     _BOR  equ     1136
+   401+                          	global	_BRGH
+   402+ 04C2                     _BRGH  equ     1218
+   403                           	global	_C1INV
+   404  04E4                     _C1INV  equ     1252
+   405+                          	global	_C1OUT
+   406+ 04E6                     _C1OUT  equ     1254
+   407                           	global	_C2INV
+   408  04E5                     _C2INV  equ     1253
+   409                           	global	_C2OUT
+   410  04E7                     _C2OUT  equ     1255
+   411                           	global	_CCP1IE
+   412  0462                     _CCP1IE  equ     1122
+   413                           	global	_CCP2IE
+   414  0468                     _CCP2IE  equ     1128
+   415                           	global	_CIS
+   416  04E3                     _CIS  equ     1251
+   417                           	global	_CKE
+   418  04A6                     _CKE  equ     1190
+   419                           	global	_CM0
+   420  04E0                     _CM0  equ     1248
+   421                           	global	_CM1
+   422  04E1                     _CM1  equ     1249
+   423                           	global	_CM2
+   424  04E2                     _CM2  equ     1250
+   425                           	global	_CMIE
+   426  046E                     _CMIE  equ     1134
+   427                           	global	_CSRC
+   428  04C7                     _CSRC  equ     1223
+   429                           	global	_CVR0
+   430  04E8                     _CVR0  equ     1256
+   431                           	global	_CVR1
+   432  04E9                     _CVR1  equ     1257
+   433                           	global	_CVR2
+   434  04EA                     _CVR2  equ     1258
+   435                           	global	_CVR3
+   436  04EB                     _CVR3  equ     1259
+   437                           	global	_CVREN
+   438  04EF                     _CVREN  equ     1263
+   439                           	global	_CVROE
+   440  04EE                     _CVROE  equ     1262
+   441                           	global	_CVRR
+   442  04ED                     _CVRR  equ     1261
+   443                           	global	_DA
+   444  04A5                     _DA  equ     1189
+   445                           	global	_EEIE
+   446  046C                     _EEIE  equ     1132
+   447                           	global	_GCEN
+   448  048F                     _GCEN  equ     1167
+   449                           	global	_INTEDG
+   450  040E                     _INTEDG  equ     1038
+   451                           	global	_PCFG0
+   452  04F8                     _PCFG0  equ     1272
+   453                           	global	_PCFG1
+   454  04F9                     _PCFG1  equ     1273
+   455                           	global	_PCFG2
+   456  04FA                     _PCFG2  equ     1274
+   457                           	global	_PCFG3
+   458  04FB                     _PCFG3  equ     1275
+   459                           	global	_PEN
+   460  048A                     _PEN  equ     1162
+   461                           	global	_POR
+   462  0471                     _POR  equ     1137
+   463                           	global	_PS0
+   464  0408                     _PS0  equ     1032
+   465                           	global	_PS1
+   466  0409                     _PS1  equ     1033
+   467                           	global	_PS2
+   468  040A                     _PS2  equ     1034
+   469                           	global	_PSA
+   470  040B                     _PSA  equ     1035
+   471                           	global	_RBPU
+   472  040F                     _RBPU  equ     1039
+   473                           	global	_RCEN
+   474  048B                     _RCEN  equ     1163
+   475                           	global	_RCIE
+   476  0465                     _RCIE  equ     1125
+   477                           	global	_RSEN
+   478  0489                     _RSEN  equ     1161
+   479                           	global	_RW
+   480  04A2                     _RW  equ     1186
+   481                           	global	_SEN
+   482  0488                     _SEN  equ     1160
+   483                           	global	_SMP
+   484  04A7                     _SMP  equ     1191
+   485                           	global	_SSPIE
+   486  0463                     _SSPIE  equ     1123
+   487                           	global	_START
+   488  04A3                     _START  equ     1187
+   489                           	global	_STOP
+   490  04A4                     _STOP  equ     1188
+   491                           	global	_SYNC
+   492  04C4                     _SYNC  equ     1220
+   493                           	global	_T0CS
+   494  040D                     _T0CS  equ     1037
+   495                           	global	_T0SE
+   496  040C                     _T0SE  equ     1036
+   497                           	global	_TMR1IE
+   498  0460                     _TMR1IE  equ     1120
+   499                           	global	_TMR2IE
+   500  0461                     _TMR2IE  equ     1121
+   501                           	global	_TRISA0
+   502  0428                     _TRISA0  equ     1064
+   503                           	global	_TRISA1
+   504  0429                     _TRISA1  equ     1065
+   505                           	global	_TRISA2
+   506  042A                     _TRISA2  equ     1066
+   507                           	global	_TRISA3
+   508  042B                     _TRISA3  equ     1067
+   509                           	global	_TRISA4
+   510  042C                     _TRISA4  equ     1068
+   511                           	global	_TRISA5
+   512  042D                     _TRISA5  equ     1069
+   513                           	global	_TRISB0
+   514  0430                     _TRISB0  equ     1072
+   515                           	global	_TRISB1
+   516  0431                     _TRISB1  equ     1073
+   517                           	global	_TRISB2
+   518  0432                     _TRISB2  equ     1074
+   519                           	global	_TRISB3
+   520  0433                     _TRISB3  equ     1075
+   521                           	global	_TRISB4
+   522  0434                     _TRISB4  equ     1076
+   523                           	global	_TRISB5
+   524  0435                     _TRISB5  equ     1077
+   525                           	global	_TRISB6
+   526  0436                     _TRISB6  equ     1078
+   527                           	global	_TRISB7
+   528  0437                     _TRISB7  equ     1079
+   529                           	global	_TRISC0
+   530  0438                     _TRISC0  equ     1080
+   531                           	global	_TRISC1
+   532  0439                     _TRISC1  equ     1081
+   533                           	global	_TRISC2
+   534  043A                     _TRISC2  equ     1082
+   535                           	global	_TRISC3
+   536  043B                     _TRISC3  equ     1083
+   537                           	global	_TRISC4
+   538  043C                     _TRISC4  equ     1084
+   539                           	global	_TRISC5
+   540  043D                     _TRISC5  equ     1085
+   541                           	global	_TRISC6
+   542  043E                     _TRISC6  equ     1086
+   543                           	global	_TRISC7
+   544  043F                     _TRISC7  equ     1087
+   545                           	global	_TRMT
+   546  04C1                     _TRMT  equ     1217
+   547                           	global	_TX9
+   548  04C6                     _TX9  equ     1222
+   549                           	global	_TX9D
+   550  04C0                     _TX9D  equ     1216
+   551                           	global	_TXEN
+   552  04C5                     _TXEN  equ     1221
+   553                           	global	_TXIE
+   554  0464                     _TXIE  equ     1124
+   555                           	global	_UA
+   556  04A1                     _UA  equ     1185
+   557                           	global	_EEADR
+   558  010D                     _EEADR  equ     269
+   559                           	global	_EEADRH
+   560  010F                     _EEADRH  equ     271
+   561                           	global	_EEADRL
+   562  010D                     _EEADRL  equ     269
+   563                           	global	_EEDATA
+   564  010C                     _EEDATA  equ     268
+   565                           	global	_EEDATH
+   566  010E                     _EEDATH  equ     270
+   567                           	global	_EECON1
+   568  018C                     _EECON1  equ     396
+   569                           	global	_EECON2
+   570  018D                     _EECON2  equ     397
+   571                           	global	_EEPGD
+   572  0C67                     _EEPGD  equ     3175
+   573                           	global	_RD
+   574  0C60                     _RD  equ     3168
+   575                           	global	_WR
+   576  0C61                     _WR  equ     3169
+   577                           	global	_WREN
+   578  0C62                     _WREN  equ     3170
+   579                           	global	_WRERR
+   580  0C63                     _WRERR  equ     3171
+   581                           	file	"number_display.as"
+   582                           	line	#
+   583                           psect cinit,class=CODE,delta=2
+   584                           global start_initialization
+   585  06AB                     start_initialization:
+   586                           
+   587                           psect	dataBANK0,class=BANK0,space=1
+   588                           global __pdataBANK0
+   589  0020                     __pdataBANK0:
+   590                           	file	"C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_display\number_
+                                 display.c"
+   591                           	line	8
+   592  0020                     _numbers:
+   593  0020                            ds      20
+   594                           
+   595                           global btemp
+   596                           psect inittext,class=CODE,delta=2
+   597                           global init_fetch,btemp
+   598                           ;	Called with low address in FSR and high address in W
+   599  069A                     init_fetch:
+   600  069A  087E               	movf btemp,w
+   601  069B  008A               	movwf pclath
+   602  069C  087F               	movf btemp+1,w
+   603  069D  0082               	movwf pc
+   604                           global init_ram
+   605                           ;Called with:
+   606                           ;	high address of idata address in btemp 
+   607                           ;	low address of idata address in btemp+1 
+   608                           ;	low address of data in FSR
+   609                           ;	high address + 1 of data in btemp-1
+   610  069E                     init_ram:
+   611  069E  269A  120A  118A   	fcall init_fetch
+   612  06A1  0080               	movwf indf,f
+   613  06A2  0A84               	incf fsr,f
+   614  06A3  0804               	movf fsr,w
+   615  06A4  067D               	xorwf btemp-1,w
+   616  06A5  1903               	btfsc status,2
+   617  06A6  3400               	retlw 0
+   618  06A7  0AFF               	incf btemp+1,f
+   619  06A8  1903               	btfsc status,2
+   620  06A9  0AFE               	incf btemp,f
+   621  06AA  2E9E               	goto init_ram
+   622                           ; Initialize objects allocated to BANK0
+   623                           psect cinit,class=CODE,delta=2
+   624                           global init_ram, __pidataBANK0
+   625  06AB  1383               	bcf	status, 7	;select IRP bank0
+   626  06AC  3034               	movlw low(__pdataBANK0+20)
+   627  06AD  00FD               	movwf btemp-1,f
+   628  06AE  3006               	movlw high(__pidataBANK0)
+   629  06AF  00FE               	movwf btemp,f
+   630  06B0  30BD               	movlw low(__pidataBANK0)
+   631  06B1  00FF               	movwf btemp+1,f
+   632  06B2  3020               	movlw low(__pdataBANK0)
+   633  06B3  0084               	movwf fsr,f
+   634  06B4  120A  118A  269E   	fcall init_ram
+              120A  118A         
+   635                           psect cinit,class=CODE,delta=2
+   636                           global end_of_initialization
+   637                           
+   638                           ;End of C runtime variable initationation code
+   639                           
+   640  06B9                     end_of_initialization:
+   641  06B9  0183               clrf status
+   642  06BA  120A  118A  2ED1   ljmp _main	;jump to C main() function
+   643                           psect	cstackCOMMON,class=COMMON,space=1
+   644                           global __pcstackCOMMON
+   645  0070                     __pcstackCOMMON:
+   646                           	global	?_tris
+   647  0070                     ?_tris: ;@ 0x0
+   648                           	global	??_delay
+   649  0070                     ??_delay: ;@ 0x0
+   650                           	global	?_ssd_switch
+   651  0070                     ?_ssd_switch: ;@ 0x0
+   652                           	global	??_ssd_switch
+   653  0070                     ??_ssd_switch: ;@ 0x0
+   654                           	global	??_tris
+   655  0070                     ??_tris: ;@ 0x0
+   656                           	global	delay@i
+   657  0070                     delay@i:	; 2 bytes @ 0x0
+   658                           	global	ssd_switch@a
+   659  0070                     ssd_switch@a:	; 2 bytes @ 0x0
+   660  0070                     	ds	1
+   661                           	global	??_main
+   662  0071                     ??_main: ;@ 0x1
+   663  0071                     	ds	1
+   664                           	global	ssd_switch@b
+   665  0072                     ssd_switch@b:	; 2 bytes @ 0x2
+   666                           	global	delay@j
+   667  0072                     delay@j:	; 2 bytes @ 0x2
+   668  0072                     	ds	2
+   669                           	global	?_delay
+   670  0074                     ?_delay: ;@ 0x4
+   671                           	global	ssd_switch@c
+   672  0074                     ssd_switch@c:	; 2 bytes @ 0x4
+   673                           	global	delay@time
+   674  0074                     delay@time:	; 2 bytes @ 0x4
+   675  0074                     	ds	2
+   676                           	global	ssd_switch@d
+   677  0076                     ssd_switch@d:	; 2 bytes @ 0x6
+   678  0076                     	ds	2
+   679                           	global	??_display_ssd
+   680  0078                     ??_display_ssd: ;@ 0x8
+   681  0078                     	ds	1
+   682                           	global	?_main
+   683  0079                     ?_main: ;@ 0x9
+   684                           psect	cstackBANK0,class=BANK0,space=1
+   685                           global __pcstackBANK0
+   686  0034                     __pcstackBANK0:
+   687                           	global	?_display_ssd
+   688  0034                     ?_display_ssd: ;@ 0x0
+   689                           	global	display_ssd@a
+   690  0034                     display_ssd@a:	; 2 bytes @ 0x0
+   691  0034                     	ds	2
+   692                           	global	display_ssd@b
+   693  0036                     display_ssd@b:	; 2 bytes @ 0x2
+   694  0036                     	ds	2
+   695                           	global	display_ssd@c
+   696  0038                     display_ssd@c:	; 2 bytes @ 0x4
+   697  0038                     	ds	2
+   698                           	global	display_ssd@d
+   699  003A                     display_ssd@d:	; 2 bytes @ 0x6
+   700  003A                     	ds	2
+   701                           ;Data sizes: Strings 0, constant 0, data 20, bss 0, persistent 0 stack 0
+   702                           ;Auto spaces:   Size  Autos    Used
+   703                           ; COMMON          14      9       9
+   704                           ; BANK0           80      8      28
+   705                           ; BANK1           80      0       0
+   706                           ; BANK3           96      0       0
+   707                           ; BANK2           96      0       0
+   708                           
+   709                           
+   710                           ;Pointer list with targets:
+   711                           
+   712                           
+   713                           
+   714                           ;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   715                           
+   716                           
+   717                           ;Call graph:                      Base Space Used Autos Args Refs Density
+   718                           ;_main                                                0    0  196   0.00
+   719                           ;               _tris
+   720                           ;        _display_ssd
+   721                           ;  _display_ssd                                       1    8  196   0.00
+   722                           ;                                    8 COMMO    1
+   723                           ;                                    0 BANK0    8
+   724                           ;         _ssd_switch
+   725                           ;              _delay
+   726                           ;  _tris                                              0    0    0   0.00
+   727                           ;    _delay                                           4    2   68   0.00
+   728                           ;                                    0 COMMO    6
+   729                           ;    _ssd_switch                                      0    8   64   0.00
+   730                           ;                                    0 COMMO    8
+   731                           ; Estimated maximum call depth 2
+   732                           ; Address spaces:
+   733                           
+   734                           ;Name               Size   Autos  Total    Cost      Usage
+   735                           ;BITCOMMON            E      0       0       0        0.0%
+   736                           ;CODE                 0      0       0       0        0.0%
+   737                           ;NULL                 0      0       0       0        0.0%
+   738                           ;COMMON               E      9       9       1       64.3%
+   739                           ;SFR0                 0      0       0       1        0.0%
+   740                           ;BITSFR0              0      0       0       1        0.0%
+   741                           ;BITSFR1              0      0       0       2        0.0%
+   742                           ;SFR1                 0      0       0       2        0.0%
+   743                           ;ABS                  0      0      25       2        0.0%
+   744                           ;STACK                0      0       0       3        0.0%
+   745                           ;BITBANK0            50      0       0       4        0.0%
+   746                           ;SFR3                 0      0       0       4        0.0%
+   747                           ;BITSFR3              0      0       0       4        0.0%
+   748                           ;BANK0               50      8      1C       5       35.0%
+   749                           ;BITSFR2              0      0       0       5        0.0%
+   750                           ;SFR2                 0      0       0       5        0.0%
+   751                           ;BITBANK1            50      0       0       6        0.0%
+   752                           ;BANK1               50      0       0       7        0.0%
+   753                           ;BITBANK3            60      0       0       8        0.0%
+   754                           ;BANK3               60      0       0       9        0.0%
+   755                           ;BITBANK2            60      0       0      10        0.0%
+   756                           ;BANK2               60      0       0      11        0.0%
+   757                           ;DATA                 0      0      25      12        0.0%
+   758                           ;EEDATA             100      0       0    1000        0.0%
+   759                           
+   760                           	global	_main
+   761                           psect	maintext,local,class=CODE,delta=2
+   762                           global __pmaintext
+   763  06D1                     __pmaintext:
+   764                           
+   765                           ; *************** function _main *****************
+   766                           ; Defined at:
+   767                           ;		line 16 in file "C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_di
+                                 splay\number_display.c"
+   768                           ; Parameters:    Size  Location     Type
+   769                           ;		None
+   770                           ; Auto vars:     Size  Location     Type
+   771                           ;		None
+   772                           ; Return value:  Size  Location     Type
+   773                           ;		None               void
+   774                           ; Registers used:
+   775                           ;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   776                           ; Tracked objects:
+   777                           ;		On entry : 17F/0
+   778                           ;		On exit  : 0/0
+   779                           ;		Unchanged: 0/0
+   780                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   781                           ;      Locals:         0       0       0       0       0
+   782                           ;      Temp:     0
+   783                           ;      Total:    0
+   784                           ; This function calls:
+   785                           ;		_tris
+   786                           ;		_display_ssd
+   787                           ; This function is called by:
+   788                           ;		Startup code after reset
+   789                           ; This function uses a non-reentrant model
+   790                           ; 
+   791                           psect	maintext
+   792                           	file	"C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_display\number_
+                                 display.c"
+   793                           	line	16
+   794                           	global	__size_of_main
+   795  0020                     	__size_of_main	equ	__end_of_main-_main
+   796                           ;pic168xa.h: 19: volatile unsigned char INDF @ 0x00;
+   797                           ;pic168xa.h: 20: volatile unsigned char TMR0 @ 0x01;
+   798                           ;pic168xa.h: 21: volatile unsigned char PCL @ 0x02;
+   799                           ;pic168xa.h: 22: volatile unsigned char STATUS @ 0x03;
+   800                           ;pic168xa.h: 23: unsigned char FSR @ 0x04;
+   801                           ;pic168xa.h: 24: volatile unsigned char PORTA @ 0x05;
+   802                           ;pic168xa.h: 25: volatile unsigned char PORTB @ 0x06;
+   803                           ;pic168xa.h: 26: volatile unsigned char PORTC @ 0x07;
+   804                           ;pic168xa.h: 31: unsigned char PCLATH @ 0x0A;
+   805                           ;pic168xa.h: 32: volatile unsigned char INTCON @ 0x0B;
+   806                           	
+   807  06D1                     _main:	
+   808                           	opt stack 8
+   809                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   810                           	line	17
+   811                           	
+   812  06D1                     l30000381:	
+   813                           ;number_display.c: 17: tris();
+   814  06D1  120A  118A  268F   	fcall	_tris
+              120A  118A         
+   815                           	
+   816  06D6                     l30000382:	
+   817                           	line	18
+   818  06D6  3001               	movlw	low(01h)
+   819  06D7  1283               	bcf	status, 5	;RP0=0, select bank0
+   820  06D8  1303               	bcf	status, 6	;RP1=0, select bank0
+   821  06D9  00B6               	movwf	0+(?_display_ssd)+02h
+   822  06DA  3000               	movlw	high(01h)
+   823  06DB  00B7               	movwf	(0+(?_display_ssd)+02h)+1
+   824  06DC  3009               	movlw	low(09h)
+   825  06DD  00B4               	movwf	(?_display_ssd)
+   826  06DE  3000               	movlw	high(09h)
+   827  06DF  00B5               	movwf	((?_display_ssd))+1
+   828  06E0  3000               	movlw	low(0)
+   829  06E1  00BA               	movwf	0+(?_display_ssd)+06h
+   830  06E2  3000               	movlw	high(0)
+   831  06E3  00BB               	movwf	(0+(?_display_ssd)+06h)+1
+   832  06E4  3008               	movlw	low(08h)
+   833  06E5  00B8               	movwf	0+(?_display_ssd)+04h
+   834  06E6  3000               	movlw	high(08h)
+   835  06E7  00B9               	movwf	(0+(?_display_ssd)+04h)+1
+   836  06E8  120A  118A  2743   	fcall	_display_ssd
+              120A  118A         
+   837  06ED  2ED6               	goto	l30000382
+   838                           	global	start
+   839  06EE  120A  118A  2800   	ljmp	start
+   840                           	opt stack 0
+   841                           GLOBAL	__end_of_main
+   842  06F1                     	__end_of_main:
+   843                           ; =============== function _main ends ============
+   844                           
+   845                           psect	maintext
+   846                           	line	19
+   847                           	signat	_main,88
+   848                           	global	_display_ssd
+   849                           psect	text25,local,class=CODE,delta=2
+   850                           global __ptext25
+   851  0743                     __ptext25:
+   852                           
+   853                           ; *************** function _display_ssd *****************
+   854                           ; Defined at:
+   855                           ;		line 21 in file "C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_di
+                                 splay\number_display.c"
+   856                           ; Parameters:    Size  Location     Type
+   857                           ;  a               2    0[BANK0 ] unsigned int 
+   858                           ;  b               2    2[BANK0 ] unsigned int 
+   859                           ;  c               2    4[BANK0 ] unsigned int 
+   860                           ;  d               2    6[BANK0 ] unsigned int 
+   861                           ; Auto vars:     Size  Location     Type
+   862                           ;		None
+   863                           ; Return value:  Size  Location     Type
+   864                           ;		None               void
+   865                           ; Registers used:
+   866                           ;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   867                           ; Tracked objects:
+   868                           ;		On entry : 0/0
+   869                           ;		On exit  : 0/0
+   870                           ;		Unchanged: 0/0
+   871                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   872                           ;      Locals:         1       8       0       0       0
+   873                           ;      Temp:     1
+   874                           ;      Total:    9
+   875                           ; This function calls:
+   876                           ;		_ssd_switch
+   877                           ;		_delay
+   878                           ; This function is called by:
+   879                           ;		_main
+   880                           ; This function uses a non-reentrant model
+   881                           ; 
+   882                           psect	text25
+   883                           	file	"C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_display\number_
+                                 display.c"
+   884                           	line	21
+   885                           	global	__size_of_display_ssd
+   886  00BD                     	__size_of_display_ssd	equ	__end_of_display_ssd-_display_ssd
+   887                           ;number_display.c: 21: void display_ssd(unsigned int a, unsigned int b, unsigned int c, 
+                                 unsigned int d){
+   888                           	
+   889  0743                     _display_ssd:	
+   890                           	opt stack 7
+   891                           ; Regs used in _display_ssd: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   892                           	line	22
+   893                           	
+   894  0743                     l30000367:	
+   895                           ;number_display.c: 22: ssd_switch(1,1,1,0);
+   896  0743  3001               	movlw	low(01h)
+   897  0744  00F2               	movwf	0+(?_ssd_switch)+02h
+   898  0745  3000               	movlw	high(01h)
+   899  0746  00F3               	movwf	(0+(?_ssd_switch)+02h)+1
+   900  0747  3001               	movlw	low(01h)
+   901  0748  00F0               	movwf	(?_ssd_switch)
+   902  0749  3000               	movlw	high(01h)
+   903  074A  00F1               	movwf	((?_ssd_switch))+1
+   904  074B  3000               	movlw	low(0)
+   905  074C  00F6               	movwf	0+(?_ssd_switch)+06h
+   906  074D  3000               	movlw	high(0)
+   907  074E  00F7               	movwf	(0+(?_ssd_switch)+06h)+1
+   908  074F  3001               	movlw	low(01h)
+   909  0750  00F4               	movwf	0+(?_ssd_switch)+04h
+   910  0751  3000               	movlw	high(01h)
+   911  0752  00F5               	movwf	(0+(?_ssd_switch)+04h)+1
+   912  0753  120A  118A  271A   	fcall	_ssd_switch
+              120A  118A         
+   913                           	
+   914  0758                     l30000368:	
+   915                           	line	23
+   916                           ;number_display.c: 23: PORTB = numbers[a];
+   917  0758  1283               	bcf	status, 5	;RP0=0, select bank0
+   918  0759  1303               	bcf	status, 6	;RP1=0, select bank0
+   919  075A  0834               	movf	(display_ssd@a),w
+   920  075B  00F8               	movwf	(??_display_ssd+0+0)
+   921  075C  0778               	addwf	(??_display_ssd+0+0),w
+   922  075D  3E20               	addlw	(_numbers)&0ffh
+   923  075E  0084               	movwf	fsr0
+   924  075F  1383               	bcf	status, 7	;select IRP bank0
+   925  0760  0800               	movf	indf,w
+   926  0761  0086               	movwf	(6)	;volatile
+   927                           	
+   928  0762                     l30000369:	
+   929                           	line	24
+   930                           ;number_display.c: 24: delay(1);
+   931  0762  3001               	movlw	low(01h)
+   932  0763  00F4               	movwf	(?_delay)
+   933  0764  3000               	movlw	high(01h)
+   934  0765  00F5               	movwf	((?_delay))+1
+   935  0766  120A  118A  26F1   	fcall	_delay
+              120A  118A         
+   936                           	
+   937  076B                     l30000370:	
+   938                           	line	25
+   939                           ;number_display.c: 25: PORTB = 0x00;
+   940  076B  1003               	clrc
+   941  076C  3000               	movlw	0
+   942  076D  1803               	btfsc	status,0
+   943  076E  3001               	movlw	1
+   944  076F  1283               	bcf	status, 5	;RP0=0, select bank0
+   945  0770  1303               	bcf	status, 6	;RP1=0, select bank0
+   946  0771  0086               	movwf	(6)	;volatile
+   947                           	
+   948  0772                     l30000371:	
+   949                           	line	27
+   950                           ;number_display.c: 27: ssd_switch(1,1,0,1);
+   951  0772  3001               	movlw	low(01h)
+   952  0773  00F2               	movwf	0+(?_ssd_switch)+02h
+   953  0774  3000               	movlw	high(01h)
+   954  0775  00F3               	movwf	(0+(?_ssd_switch)+02h)+1
+   955  0776  3001               	movlw	low(01h)
+   956  0777  00F0               	movwf	(?_ssd_switch)
+   957  0778  3000               	movlw	high(01h)
+   958  0779  00F1               	movwf	((?_ssd_switch))+1
+   959  077A  3001               	movlw	low(01h)
+   960  077B  00F6               	movwf	0+(?_ssd_switch)+06h
+   961  077C  3000               	movlw	high(01h)
+   962  077D  00F7               	movwf	(0+(?_ssd_switch)+06h)+1
+   963  077E  3000               	movlw	low(0)
+   964  077F  00F4               	movwf	0+(?_ssd_switch)+04h
+   965  0780  3000               	movlw	high(0)
+   966  0781  00F5               	movwf	(0+(?_ssd_switch)+04h)+1
+   967  0782  120A  118A  271A   	fcall	_ssd_switch
+              120A  118A         
+   968                           	
+   969  0787                     l30000372:	
+   970                           	line	28
+   971                           ;number_display.c: 28: PORTB = numbers[b];
+   972  0787  1283               	bcf	status, 5	;RP0=0, select bank0
+   973  0788  1303               	bcf	status, 6	;RP1=0, select bank0
+   974  0789  0836               	movf	(display_ssd@b),w
+   975  078A  00F8               	movwf	(??_display_ssd+0+0)
+   976  078B  0778               	addwf	(??_display_ssd+0+0),w
+   977  078C  3E20               	addlw	(_numbers)&0ffh
+   978  078D  0084               	movwf	fsr0
+   979  078E  1383               	bcf	status, 7	;select IRP bank0
+   980  078F  0800               	movf	indf,w
+   981  0790  0086               	movwf	(6)	;volatile
+   982                           	
+   983  0791                     l30000373:	
+   984                           	line	29
+   985                           ;number_display.c: 29: delay(1);
+   986  0791  3001               	movlw	low(01h)
+   987  0792  00F4               	movwf	(?_delay)
+   988  0793  3000               	movlw	high(01h)
+   989  0794  00F5               	movwf	((?_delay))+1
+   990  0795  120A  118A  26F1   	fcall	_delay
+              120A  118A         
+   991                           	line	30
+   992                           ;number_display.c: 30: PORTB = 0x00;
+   993  079A  1003               	clrc
+   994  079B  3000               	movlw	0
+   995  079C  1803               	btfsc	status,0
+   996  079D  3001               	movlw	1
+   997  079E  1283               	bcf	status, 5	;RP0=0, select bank0
+   998  079F  1303               	bcf	status, 6	;RP1=0, select bank0
+   999  07A0  0086               	movwf	(6)	;volatile
+  1000                           	
+  1001  07A1                     l30000374:	
+  1002                           	line	32
+  1003                           ;number_display.c: 32: ssd_switch(1,0,1,1);
+  1004  07A1  3000               	movlw	low(0)
+  1005  07A2  00F2               	movwf	0+(?_ssd_switch)+02h
+  1006  07A3  3000               	movlw	high(0)
+  1007  07A4  00F3               	movwf	(0+(?_ssd_switch)+02h)+1
+  1008  07A5  3001               	movlw	low(01h)
+  1009  07A6  00F0               	movwf	(?_ssd_switch)
+  1010  07A7  3000               	movlw	high(01h)
+  1011  07A8  00F1               	movwf	((?_ssd_switch))+1
+  1012  07A9  3001               	movlw	low(01h)
+  1013  07AA  00F6               	movwf	0+(?_ssd_switch)+06h
+  1014  07AB  3000               	movlw	high(01h)
+  1015  07AC  00F7               	movwf	(0+(?_ssd_switch)+06h)+1
+  1016  07AD  3001               	movlw	low(01h)
+  1017  07AE  00F4               	movwf	0+(?_ssd_switch)+04h
+  1018  07AF  3000               	movlw	high(01h)
+  1019  07B0  00F5               	movwf	(0+(?_ssd_switch)+04h)+1
+  1020  07B1  120A  118A  271A   	fcall	_ssd_switch
+              120A  118A         
+  1021                           	
+  1022  07B6                     l30000375:	
+  1023                           	line	33
+  1024                           ;number_display.c: 33: PORTB = numbers[c];
+  1025  07B6  1283               	bcf	status, 5	;RP0=0, select bank0
+  1026  07B7  1303               	bcf	status, 6	;RP1=0, select bank0
+  1027  07B8  0838               	movf	(display_ssd@c),w
+  1028  07B9  00F8               	movwf	(??_display_ssd+0+0)
+  1029  07BA  0778               	addwf	(??_display_ssd+0+0),w
+  1030  07BB  3E20               	addlw	(_numbers)&0ffh
+  1031  07BC  0084               	movwf	fsr0
+  1032  07BD  1383               	bcf	status, 7	;select IRP bank0
+  1033  07BE  0800               	movf	indf,w
+  1034  07BF  0086               	movwf	(6)	;volatile
+  1035                           	
+  1036  07C0                     l30000376:	
+  1037                           	line	34
+  1038                           ;number_display.c: 34: delay(1);
+  1039  07C0  3001               	movlw	low(01h)
+  1040  07C1  00F4               	movwf	(?_delay)
+  1041  07C2  3000               	movlw	high(01h)
+  1042  07C3  00F5               	movwf	((?_delay))+1
+  1043  07C4  120A  118A  26F1   	fcall	_delay
+              120A  118A         
+  1044                           	
+  1045  07C9                     l30000377:	
+  1046                           	line	35
+  1047                           ;number_display.c: 35: PORTB = 0x00;
+  1048  07C9  1003               	clrc
+  1049  07CA  3000               	movlw	0
+  1050  07CB  1803               	btfsc	status,0
+  1051  07CC  3001               	movlw	1
+  1052  07CD  1283               	bcf	status, 5	;RP0=0, select bank0
+  1053  07CE  1303               	bcf	status, 6	;RP1=0, select bank0
+  1054  07CF  0086               	movwf	(6)	;volatile
+  1055                           	
+  1056  07D0                     l30000378:	
+  1057                           	line	37
+  1058                           ;number_display.c: 37: ssd_switch(0,1,1,1);
+  1059  07D0  3001               	movlw	low(01h)
+  1060  07D1  00F2               	movwf	0+(?_ssd_switch)+02h
+  1061  07D2  3000               	movlw	high(01h)
+  1062  07D3  00F3               	movwf	(0+(?_ssd_switch)+02h)+1
+  1063  07D4  3000               	movlw	low(0)
+  1064  07D5  00F0               	movwf	(?_ssd_switch)
+  1065  07D6  3000               	movlw	high(0)
+  1066  07D7  00F1               	movwf	((?_ssd_switch))+1
+  1067  07D8  3001               	movlw	low(01h)
+  1068  07D9  00F6               	movwf	0+(?_ssd_switch)+06h
+  1069  07DA  3000               	movlw	high(01h)
+  1070  07DB  00F7               	movwf	(0+(?_ssd_switch)+06h)+1
+  1071  07DC  3001               	movlw	low(01h)
+  1072  07DD  00F4               	movwf	0+(?_ssd_switch)+04h
+  1073  07DE  3000               	movlw	high(01h)
+  1074  07DF  00F5               	movwf	(0+(?_ssd_switch)+04h)+1
+  1075  07E0  120A  118A  271A   	fcall	_ssd_switch
+              120A  118A         
+  1076                           	
+  1077  07E5                     l30000379:	
+  1078                           	line	38
+  1079                           ;number_display.c: 38: PORTB = numbers[d];
+  1080  07E5  1283               	bcf	status, 5	;RP0=0, select bank0
+  1081  07E6  1303               	bcf	status, 6	;RP1=0, select bank0
+  1082  07E7  083A               	movf	(display_ssd@d),w
+  1083  07E8  00F8               	movwf	(??_display_ssd+0+0)
+  1084  07E9  0778               	addwf	(??_display_ssd+0+0),w
+  1085  07EA  3E20               	addlw	(_numbers)&0ffh
+  1086  07EB  0084               	movwf	fsr0
+  1087  07EC  1383               	bcf	status, 7	;select IRP bank0
+  1088  07ED  0800               	movf	indf,w
+  1089  07EE  0086               	movwf	(6)	;volatile
+  1090                           	line	39
+  1091                           ;number_display.c: 39: delay(1);
+  1092  07EF  3001               	movlw	low(01h)
+  1093  07F0  00F4               	movwf	(?_delay)
+  1094  07F1  3000               	movlw	high(01h)
+  1095  07F2  00F5               	movwf	((?_delay))+1
+  1096  07F3  120A  118A  26F1   	fcall	_delay
+              120A  118A         
+  1097                           	
+  1098  07F8                     l30000380:	
+  1099                           	line	40
+  1100                           ;number_display.c: 40: PORTB = 0x00;
+  1101  07F8  1003               	clrc
+  1102  07F9  3000               	movlw	0
+  1103  07FA  1803               	btfsc	status,0
+  1104  07FB  3001               	movlw	1
+  1105  07FC  1283               	bcf	status, 5	;RP0=0, select bank0
+  1106  07FD  1303               	bcf	status, 6	;RP1=0, select bank0
+  1107  07FE  0086               	movwf	(6)	;volatile
+  1108                           	
+  1109  07FF                     l5:	
+  1110  07FF  0008               	return
+  1111                           	opt stack 0
+  1112                           GLOBAL	__end_of_display_ssd
+  1113  0800                     	__end_of_display_ssd:
+  1114                           ; =============== function _display_ssd ends ============
+  1115                           
+  1116                           psect	text26,local,class=CODE,delta=2
+  1117                           global __ptext26
+  1118  068F                     __ptext26:
+  1119                           	line	41
+  1120                           	signat	_display_ssd,16504
+  1121                           	global	_tris
+  1122                           
+  1123                           ; *************** function _tris *****************
+  1124                           ; Defined at:
+  1125                           ;		line 50 in file "C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_di
+                                 splay\number_display.c"
+  1126                           ; Parameters:    Size  Location     Type
+  1127                           ;		None
+  1128                           ; Auto vars:     Size  Location     Type
+  1129                           ;		None
+  1130                           ; Return value:  Size  Location     Type
+  1131                           ;		None               void
+  1132                           ; Registers used:
+  1133                           ;		wreg, status,2, status,0
+  1134                           ; Tracked objects:
+  1135                           ;		On entry : 0/0
+  1136                           ;		On exit  : 0/0
+  1137                           ;		Unchanged: 0/0
+  1138                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1139                           ;      Locals:         0       0       0       0       0
+  1140                           ;      Temp:     0
+  1141                           ;      Total:    0
+  1142                           ; This function calls:
+  1143                           ;		Nothing
+  1144                           ; This function is called by:
+  1145                           ;		_main
+  1146                           ; This function uses a non-reentrant model
+  1147                           ; 
+  1148                           psect	text26
+  1149                           	file	"C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_display\number_
+                                 display.c"
+  1150                           	line	50
+  1151                           	global	__size_of_tris
+  1152  000B                     	__size_of_tris	equ	__end_of_tris-_tris
+  1153                           ;number_display.c: 50: void tris(void){
+  1154                           	
+  1155  068F                     _tris:	
+  1156                           	opt stack 7
+  1157                           ; Regs used in _tris: [wreg+status,2+status,0]
+  1158                           	line	51
+  1159                           	
+  1160  068F                     l30000359:	
+  1161                           ;number_display.c: 51: TRISA1 = 0;
+  1162  068F  1683               	bsf	status, 5	;RP0=1, select bank1
+  1163  0690  1303               	bcf	status, 6	;RP1=0, select bank1
+  1164  0691  1085               	bcf	(1065/8)^080h,(1065)&7
+  1165                           	
+  1166  0692                     l30000360:	
+  1167                           	line	52
+  1168                           ;number_display.c: 52: TRISB = 0x00;
+  1169  0692  1003               	clrc
+  1170  0693  3000               	movlw	0
+  1171  0694  1803               	btfsc	status,0
+  1172  0695  3001               	movlw	1
+  1173  0696  0086               	movwf	(134)^080h	;volatile
+  1174                           	
+  1175  0697                     l30000361:	
+  1176                           	line	53
+  1177                           ;number_display.c: 53: TRISC = 0xF8;
+  1178  0697  30F8               	movlw	(0F8h)
+  1179  0698  0087               	movwf	(135)^080h	;volatile
+  1180                           	
+  1181  0699                     l7:	
+  1182  0699  0008               	return
+  1183                           	opt stack 0
+  1184                           GLOBAL	__end_of_tris
+  1185  069A                     	__end_of_tris:
+  1186                           ; =============== function _tris ends ============
+  1187                           
+  1188                           psect	text27,local,class=CODE,delta=2
+  1189                           global __ptext27
+  1190  06F1                     __ptext27:
+  1191                           	line	54
+  1192                           	signat	_tris,88
+  1193                           	global	_delay
+  1194                           
+  1195                           ; *************** function _delay *****************
+  1196                           ; Defined at:
+  1197                           ;		line 56 in file "C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_di
+                                 splay\number_display.c"
+  1198                           ; Parameters:    Size  Location     Type
+  1199                           ;  time            2    4[COMMON] unsigned int 
+  1200                           ; Auto vars:     Size  Location     Type
+  1201                           ;  j               2    2[COMMON] unsigned int 
+  1202                           ;  i               2    0[COMMON] unsigned int 
+  1203                           ; Return value:  Size  Location     Type
+  1204                           ;		None               void
+  1205                           ; Registers used:
+  1206                           ;		wreg
+  1207                           ; Tracked objects:
+  1208                           ;		On entry : 0/0
+  1209                           ;		On exit  : 0/0
+  1210                           ;		Unchanged: 0/0
+  1211                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1212                           ;      Locals:         6       0       0       0       0
+  1213                           ;      Temp:     0
+  1214                           ;      Total:    6
+  1215                           ; This function calls:
+  1216                           ;		Nothing
+  1217                           ; This function is called by:
+  1218                           ;		_display_ssd
+  1219                           ; This function uses a non-reentrant model
+  1220                           ; 
+  1221                           psect	text27
+  1222                           	file	"C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_display\number_
+                                 display.c"
+  1223                           	line	56
+  1224                           	global	__size_of_delay
+  1225  0029                     	__size_of_delay	equ	__end_of_delay-_delay
+  1226                           ;number_display.c: 56: void delay(unsigned int time){
+  1227                           	
+  1228  06F1                     _delay:	
+  1229                           	opt stack 6
+  1230                           ; Regs used in _delay: [wreg]
+  1231                           	line	58
+  1232                           	
+  1233  06F1                     l30000383:	
+  1234                           ;number_display.c: 57: unsigned int i,j;
+  1235                           ;number_display.c: 58: for(i=0;i<time;i++) for(j=0;j<40;j++);
+  1236  06F1  3000               	movlw	low(0)
+  1237  06F2  00F0               	movwf	(delay@i)
+  1238  06F3  3000               	movlw	high(0)
+  1239  06F4  00F1               	movwf	((delay@i))+1
+  1240  06F5  2F0F               	goto	l12
+  1241                           	
+  1242  06F6                     l30000384:	
+  1243  06F6  3000               	movlw	low(0)
+  1244  06F7  00F2               	movwf	(delay@j)
+  1245  06F8  3000               	movlw	high(0)
+  1246  06F9  00F3               	movwf	((delay@j))+1
+  1247                           	
+  1248  06FA                     l30000386:	
+  1249  06FA  3001               	movlw	low(01h)
+  1250  06FB  07F2               	addwf	(delay@j),f
+  1251  06FC  1803               	skipnc
+  1252  06FD  0AF3               	incf	(delay@j+1),f
+  1253  06FE  3000               	movlw	high(01h)
+  1254  06FF  07F3               	addwf	(delay@j+1),f
+  1255  0700  3000               	movlw	high(028h)
+  1256  0701  0273               	subwf	(delay@j+1),w
+  1257  0702  3028               	movlw	low(028h)
+  1258  0703  1903               	skipnz
+  1259  0704  0272               	subwf	(delay@j),w
+  1260  0705  1C03               	skipc
+  1261  0706  2F08               	goto	u111
+  1262  0707  2F09               	goto	u110
+  1263  0708                     u111:
+  1264  0708  2EFA               	goto	l30000386
+  1265  0709                     u110:
+  1266                           	
+  1267  0709                     l30000387:	
+  1268  0709  3001               	movlw	low(01h)
+  1269  070A  07F0               	addwf	(delay@i),f
+  1270  070B  1803               	skipnc
+  1271  070C  0AF1               	incf	(delay@i+1),f
+  1272  070D  3000               	movlw	high(01h)
+  1273  070E  07F1               	addwf	(delay@i+1),f
+  1274                           	
+  1275  070F                     l12:	
+  1276  070F  0875               	movf	(delay@time+1),w
+  1277  0710  0271               	subwf	(delay@i+1),w
+  1278  0711  1D03               	skipz
+  1279  0712  2F15               	goto	u125
+  1280  0713  0874               	movf	(delay@time),w
+  1281  0714  0270               	subwf	(delay@i),w
+  1282  0715                     u125:
+  1283  0715  1C03               	skipc
+  1284  0716  2F18               	goto	u121
+  1285  0717  2F19               	goto	u120
+  1286  0718                     u121:
+  1287  0718  2EF6               	goto	l30000384
+  1288  0719                     u120:
+  1289                           	
+  1290  0719                     l8:	
+  1291  0719  0008               	return
+  1292                           	opt stack 0
+  1293                           GLOBAL	__end_of_delay
+  1294  071A                     	__end_of_delay:
+  1295                           ; =============== function _delay ends ============
+  1296                           
+  1297                           psect	text28,local,class=CODE,delta=2
+  1298                           global __ptext28
+  1299  071A                     __ptext28:
+  1300                           	line	59
+  1301                           	signat	_delay,4216
+  1302                           	global	_ssd_switch
+  1303                           
+  1304                           ; *************** function _ssd_switch *****************
+  1305                           ; Defined at:
+  1306                           ;		line 43 in file "C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_di
+                                 splay\number_display.c"
+  1307                           ; Parameters:    Size  Location     Type
+  1308                           ;  a               2    0[COMMON] unsigned int 
+  1309                           ;  b               2    2[COMMON] unsigned int 
+  1310                           ;  c               2    4[COMMON] unsigned int 
+  1311                           ;  d               2    6[COMMON] unsigned int 
+  1312                           ; Auto vars:     Size  Location     Type
+  1313                           ;		None
+  1314                           ; Return value:  Size  Location     Type
+  1315                           ;		None               void
+  1316                           ; Registers used:
+  1317                           ;		None
+  1318                           ; Tracked objects:
+  1319                           ;		On entry : 0/0
+  1320                           ;		On exit  : 0/0
+  1321                           ;		Unchanged: 0/0
+  1322                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1323                           ;      Locals:         8       0       0       0       0
+  1324                           ;      Temp:     0
+  1325                           ;      Total:    8
+  1326                           ; This function calls:
+  1327                           ;		Nothing
+  1328                           ; This function is called by:
+  1329                           ;		_display_ssd
+  1330                           ; This function uses a non-reentrant model
+  1331                           ; 
+  1332                           psect	text28
+  1333                           	file	"C:\Users\Prolific\Desktop\Manthan Ladva\Pic16-Projects\ssd\number_display\number_
+                                 display.c"
+  1334                           	line	43
+  1335                           	global	__size_of_ssd_switch
+  1336  0029                     	__size_of_ssd_switch	equ	__end_of_ssd_switch-_ssd_switch
+  1337                           ;number_display.c: 43: void ssd_switch(unsigned int a, unsigned int b, unsigned int c, u
+                                 nsigned int d){
+  1338                           	
+  1339  071A                     _ssd_switch:	
+  1340                           	opt stack 6
+  1341                           ; Regs used in _ssd_switch: []
+  1342                           	line	44
+  1343                           	
+  1344  071A                     l30000388:	
+  1345                           ;number_display.c: 44: RA1 = a;
+  1346  071A  1870               	btfsc	(ssd_switch@a),0
+  1347  071B  2F1D               	goto	u131
+  1348  071C  2F21               	goto	u130
+  1349                           	
+  1350  071D                     u131:
+  1351  071D  1283               	bcf	status, 5	;RP0=0, select bank0
+  1352  071E  1303               	bcf	status, 6	;RP1=0, select bank0
+  1353  071F  1485               	bsf	(41/8),(41)&7
+  1354  0720  2F24               	goto	u144
+  1355  0721                     u130:
+  1356  0721  1283               	bcf	status, 5	;RP0=0, select bank0
+  1357  0722  1303               	bcf	status, 6	;RP1=0, select bank0
+  1358  0723  1085               	bcf	(41/8),(41)&7
+  1359  0724                     u144:
+  1360                           	line	45
+  1361                           ;number_display.c: 45: RC0 = b;
+  1362  0724  1872               	btfsc	(ssd_switch@b),0
+  1363  0725  2F27               	goto	u151
+  1364  0726  2F2B               	goto	u150
+  1365                           	
+  1366  0727                     u151:
+  1367  0727  1283               	bcf	status, 5	;RP0=0, select bank0
+  1368  0728  1303               	bcf	status, 6	;RP1=0, select bank0
+  1369  0729  1407               	bsf	(56/8),(56)&7
+  1370  072A  2F2E               	goto	u164
+  1371  072B                     u150:
+  1372  072B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1373  072C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1374  072D  1007               	bcf	(56/8),(56)&7
+  1375  072E                     u164:
+  1376                           	line	46
+  1377                           ;number_display.c: 46: RC1 = c;
+  1378  072E  1874               	btfsc	(ssd_switch@c),0
+  1379  072F  2F31               	goto	u171
+  1380  0730  2F35               	goto	u170
+  1381                           	
+  1382  0731                     u171:
+  1383  0731  1283               	bcf	status, 5	;RP0=0, select bank0
+  1384  0732  1303               	bcf	status, 6	;RP1=0, select bank0
+  1385  0733  1487               	bsf	(57/8),(57)&7
+  1386  0734  2F38               	goto	u184
+  1387  0735                     u170:
+  1388  0735  1283               	bcf	status, 5	;RP0=0, select bank0
+  1389  0736  1303               	bcf	status, 6	;RP1=0, select bank0
+  1390  0737  1087               	bcf	(57/8),(57)&7
+  1391  0738                     u184:
+  1392                           	line	47
+  1393                           ;number_display.c: 47: RC2 = d;
+  1394  0738  1876               	btfsc	(ssd_switch@d),0
+  1395  0739  2F3B               	goto	u191
+  1396  073A  2F3F               	goto	u190
+  1397                           	
+  1398  073B                     u191:
+  1399  073B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1400  073C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1401  073D  1507               	bsf	(58/8),(58)&7
+  1402  073E  2F42               	goto	u204
+  1403  073F                     u190:
+  1404  073F  1283               	bcf	status, 5	;RP0=0, select bank0
+  1405  0740  1303               	bcf	status, 6	;RP1=0, select bank0
+  1406  0741  1107               	bcf	(58/8),(58)&7
+  1407  0742                     u204:
+  1408                           	
+  1409  0742                     l6:	
+  1410  0742  0008               	return
+  1411                           	opt stack 0
+  1412                           GLOBAL	__end_of_ssd_switch
+  1413  0743                     	__end_of_ssd_switch:
+  1414                           ; =============== function _ssd_switch ends ============
+  1415                           
+  1416                           psect	text29,local,class=CODE,delta=2
+  1417                           global __ptext29
+  1418  0003                     __ptext29:
+  1419                           	line	48
+  1420                           	signat	_ssd_switch,16504
+  1421                           	global	btemp
+  1422  007E                     	btemp set 07Eh
+
+
+HI-TECH Software PICC Macro Assembler V9.70 build 5239 
+Symbol Table                                                                                   Wed Aug 11 11:40:22 2010
+
+                   l5 07FF                     l6 0742                     l7 0699                     l8 0719  
+                   pc 0002        __size_of_delay 0029                    l12 070F                    _DA 04A5  
+                  _BF 04A0                    _DC 0019                    _PD 001B                    _RD 0C60  
+                  _UA 04A1                    _TO 001C                    _RW 04A2                    _WR 0C61  
+                  fsr 0004                   _CM0 04E0                   _CM1 04E1                   _CM2 04E2  
+                 _CKE 04A6                   _CIS 04E3                   _CKP 00A4                   _GIE 005F  
+                 _BOR 0470                   _RA0 0028                   _RA1 0029                   _RB0 0030  
+                 _RA2 002A                   _RB1 0031                   _RA3 002B                   _RC0 0038  
+                 _RB2 0032                   _RA4 002C                   _RC1 0039                   _RB3 0033  
+                 _RA5 002D                   _RC2 003A                   _RB4 0034                   _RC3 003B  
+                 _RB5 0035                   _RC4 003C                   _RB6 0036                   _RC5 003D  
+                 _RB7 0037                   _RC6 003E                   _RC7 003F                   u110 0709  
+                 u111 0708                   u120 0719                   u121 0718                   u130 0721  
+                 u131 071D                   u204 0742                   u125 0715                   u150 072B  
+                 u151 0727                   u144 0724                   _FSR 0004                   u170 0735  
+                 _PCL 0002                   u171 0731                   u164 072E                   u190 073F  
+                 _PS0 0408                   _PR2 0092                   u191 073B                   _PS1 0409  
+                 u184 0738                   _PS2 040A                   _PEN 048A                   _RP0 001D  
+                 _IRP 001F                   _RP1 001E                   _SEN 0488                   _PSA 040B  
+                 _POR 0471                   _RX9 00C6                   _SMP 04A7                   _TX9 04C6  
+                 fsr0 0004                   indf 0000               ??_delay 0070                  _ADIE 0466  
+                _ADIF 0066                  _ADFM 04FF                  _ADGO 00FA                  _ADON 00F8  
+            __ptext25 0743              __ptext26 068F              __ptext27 06F1              __ptext28 071A  
+            __ptext29 0003                  _CHS0 00FB                  _CHS1 00FC                  _CHS2 00FD  
+                _EEIE 046C                  _EEIF 006C                  _GCEN 048F                  _CMIE 046E  
+                _CMIF 006E                  _BRGH 04C2                  _T0IE 005D                  _T0IF 005A  
+                _CREN 00C4                  _T0CS 040D                  _FERR 00C2                  _CVR0 04E8  
+                _CVR1 04E9                  _CVR2 04EA                  _CVR3 04EB                  _T0SE 040C  
+                _CSRC 04C7                  _INDF 0000                  _PIE1 008C                  _PIE2 008D  
+                _CVRR 04ED                  _PEIE 005E                  _INTE 005C                  _INTF 0059  
+                _RBIE 005B                  _RBIF 0058                  _RCIE 0465                  _RCEN 048B  
+                _RCIF 0065                  _PCON 008E                  _PIR1 000C                  _PIR2 000D  
+                _OERR 00C1                  _RBPU 040F          __pidataBANK0 06BD                  _RX9D 00C0  
+                _TMR0 0001                  _TMR2 0011                  _WCOL 00A7                  _SPEN 00C7  
+                _RSEN 0489                  _TX9D 04C0                  _SREN 00C5                  _TRMT 04C1  
+                _STOP 04A4                  _TXIE 0464                  _ZERO 001A                  _WREN 0C62  
+                _TXEN 04C5                  _TXIF 0064                  _SYNC 04C4                  _main 06D1  
+                _tris 068F                  btemp 007E                  start 0000            _ssd_switch 071A  
+  __end_of_ssd_switch 0743   start_initialization 06AB           ?_ssd_switch 0070               _CCP1CON 0017  
+             _CCP2CON 001D               _ACKSTAT 048E                 _C1INV 04E4                 _C2INV 04E5  
+               _C1OUT 04E6                 _C2OUT 04E7                 _ADCS0 00FE                 _ADCS1 00FF  
+               _ADCS2 04FE                 _ADDEN 00C3                 ?_main 0079                 _ACKEN 048C  
+               _ACKDT 048D                 _BCLIE 046B                 _BCLIF 006B                 _CCP1X 00BD  
+               _CCP1Y 00BC                 _CCP2X 00ED                 _CCP2Y 00EC                 _EEADR 010D  
+       __end_of_delay 071A                 _CARRY 0018                 _EEPGD 0C67                 _CMCON 009C  
+               ?_tris 0070                 _T1CON 0010                 _T2CON 0012               _T1CKPS0 0084  
+             _T1CKPS1 0085                 _PCFG0 04F8                 _PCFG1 04F9                 _PCFG2 04FA  
+               _PCFG3 04FB               _T2CKPS0 0090               _T2CKPS1 0091                 _CVREN 04EF  
+               _CVROE 04EE                 _RCREG 001A                 _RCSTA 0018                 _TMR1H 000F  
+               _TMR1L 000E                 _SPBRG 0099                 _PORTA 0005                 _PORTB 0006  
+             _T1OSCEN 0083                 _PORTC 0007                 _START 04A3                 _SSPM0 00A0  
+               _SSPM1 00A1                 _SSPM2 00A2                 _SSPM3 00A3                 _TRISA 0085  
+               _TRISB 0086                 _TRISC 0087                 _SSPIE 0463                 _SSPIF 0063  
+               _SSPEN 00A5                 _SSPOV 00A6                 _WRERR 0C63                 _TXREG 0019  
+               _TXSTA 0098          display_ssd@a 0034          display_ssd@b 0036          display_ssd@c 0038  
+        display_ssd@d 003A        __pcstackCOMMON 0070                 _delay 06F1               _SSPCON2 0091  
+             _SSPSTAT 0094               _TOUTPS0 0093               _TOUTPS1 0094               _TOUTPS2 0095  
+             _TOUTPS3 0096          ??_ssd_switch 0070                 pclath 000A                 status 0003  
+           delay@time 0074           _display_ssd 0743         __size_of_main 0020              l30000360 0692  
+            l30000361 0697              l30000370 076B              l30000371 0772   __end_of_display_ssd 0800  
+            l30000380 07F8              l30000372 0787              l30000373 0791              l30000381 06D1  
+            l30000374 07A1              l30000382 06D6              l30000383 06F1              l30000359 068F  
+            l30000375 07B6              l30000367 0743              l30000384 06F6              l30000376 07C0  
+            l30000368 0758              l30000377 07C9              l30000369 0762              l30000386 06FA  
+            l30000378 07D0              l30000387 0709              l30000379 07E5              l30000388 071A  
+       __size_of_tris 000B                ??_main 0071                ??_tris 0070            __pmaintext 06D1  
+         ssd_switch@a 0070           ssd_switch@b 0072           ssd_switch@c 0074           ssd_switch@d 0076  
+        ?_display_ssd 0034               _numbers 0020                ?_delay 0074                _ADCON0 001F  
+              _ADCON1 009F                _CCP1M0 00B8                _CCP1M1 00B9                _CCP1M2 00BA  
+              _CCP1M3 00BB                _CCP2M0 00E8                _CCP2M1 00E9                _CCP2M2 00EA  
+              _CCP2M3 00EB                _CCP1IE 0462                _CCP1IF 0062                _CCP2IE 0468  
+              _CCP2IF 0068                _ADRESH 001E                _EEADRH 010F                _ADRESL 009E  
+              _EEADRL 010D                _EEDATA 010C                _CCPR1H 0016                _EEDATH 010E  
+              _CCPR2H 001C                _CCPR1L 0015                _CCPR2L 001B                _EECON1 018C  
+              _EECON2 018D          __end_of_main 06F1                _GODONE 00FA  end_of_initialization 06B9  
+        __end_of_tris 069A  __size_of_display_ssd 00BD                _CVRCON 009D                _T1SYNC 0082  
+              _INTEDG 040E                _PCLATH 000A                _INTCON 000B         __pcstackBANK0 0034  
+              _TMR0IE 005D                _TMR0IF 005A                _TMR1IE 0460                _TMR1IF 0060  
+              _TMR1CS 0081                _TMR2IE 0461                _TMR2IF 0061                _OPTION 0081  
+              _TMR1ON 0080                _TMR2ON 0092                _SSPADD 0093                _TRISA0 0428  
+              _TRISA1 0429                _TRISB0 0430                _TRISA2 042A                _TRISB1 0431  
+              _TRISA3 042B                _TRISC0 0438                _TRISB2 0432                _TRISA4 042C  
+              _TRISC1 0439                _TRISB3 0433                _TRISA5 042D                _TRISC2 043A  
+              _TRISB4 0434                _TRISC3 043B                _TRISB5 0435                _TRISC4 043C  
+              _TRISB6 0436                _TRISC5 043D                _TRISB7 0437                _TRISC6 043E  
+              _TRISC7 043F                _STATUS 0003                _SSPCON 0014                _SSPBUF 0013  
+             init_ram 069E                delay@i 0070                delay@j 0072             init_fetch 069A  
+ __size_of_ssd_switch 0029         ??_display_ssd 0078           __pdataBANK0 0020  

@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "odd_even.o" --strict --scatter "odd_even.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\odd_even.map" -o "odd_even.axf"

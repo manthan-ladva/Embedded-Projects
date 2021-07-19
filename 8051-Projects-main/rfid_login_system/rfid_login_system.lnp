@@ -1,0 +1,9 @@
+"main.obj",
+"delay.obj",
+"lcd.obj",
+"ssd.obj",
+"uart.obj",
+"brain.obj",
+"dcmotor.obj" 
+TO "rfid_login_system" 
+RAMSIZE(256) 

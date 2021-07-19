@@ -1,0 +1,20 @@
+*** Creating Trace Output File 'increment_decrement.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"increment_decrement.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "increment_decrement.o" --strict --scatter "increment_decrement.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\increment_decrement.map" -o "increment_decrement.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'increment_decrement.axf'
+### ADS-LD Command File: 'increment_decrement.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'increment_decrement.lnp', Handle=0x000005C0
+### Writing '.lnp' file
+### ADS-LD Command file 'increment_decrement.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

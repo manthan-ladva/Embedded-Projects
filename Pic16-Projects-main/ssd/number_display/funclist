@@ -1,0 +1,6 @@
+_delay: CODE, 1777 0 41
+_tris: CODE, 1679 0 11
+_display_ssd: CODE, 1859 0 189
+_ssd_switch: CODE, 1818 0 41
+_main: CODE, 1745 0 32
+Total: 314

@@ -1,0 +1,97 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\prolific\Desktop\Manthan Ladva\Arm-Projects\ssd\increment_decrement\increment_decrement.uvproj
+Project File Date:  08/11/2010
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling increment_decrement.c...
+increment_decrement.c(19): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(23): error:  #20: identifier "i" is undefined
+increment_decrement.c(23): warning:  #223-D: function "display_ssd" declared implicitly
+increment_decrement.c(24): warning:  #223-D: function "inc" declared implicitly
+increment_decrement.c(55): error:  #159: declaration is incompatible with previous "display_ssd" (declared at line 23)
+increment_decrement.c(89): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(25): error:  #20: identifier "i" is undefined
+increment_decrement.c(91): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(22): error:  #20: identifier "nsigned" is undefined
+increment_decrement.c(22): error:  #65: expected a ";"
+increment_decrement.c(26): error:  #20: identifier "i" is undefined
+increment_decrement.c(92): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(92): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1392 RO-data=32 RW-data=56 ZI-data=1256  
+FromELF: creating hex file...
+"increment_decrement.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(92): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1392 RO-data=32 RW-data=56 ZI-data=1256  
+FromELF: creating hex file...
+"increment_decrement.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(92): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1392 RO-data=32 RW-data=56 ZI-data=1256  
+FromELF: creating hex file...
+"increment_decrement.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(91): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1360 RO-data=32 RW-data=56 ZI-data=1256  
+FromELF: creating hex file...
+"increment_decrement.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(91): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1360 RO-data=32 RW-data=56 ZI-data=1256  
+FromELF: creating hex file...
+"increment_decrement.axf" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling increment_decrement.c...
+increment_decrement.c(6): warning:  #1295-D: Deprecated declaration display_ssd - give arg types
+increment_decrement.c(7): warning:  #1295-D: Deprecated declaration increment - give arg types
+increment_decrement.c(21): warning:  #951-D: return type of function "main" must be "int"
+increment_decrement.c(91): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1360 RO-data=32 RW-data=56 ZI-data=1256  
+FromELF: creating hex file...
+"increment_decrement.axf" - 0 Error(s), 4 Warning(s).

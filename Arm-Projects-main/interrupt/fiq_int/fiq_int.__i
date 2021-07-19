@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC\Philips" -o "fiq_int.o" --omf_browse "fiq_int.crf" --depend "fiq_int.d" "fiq_int.c"

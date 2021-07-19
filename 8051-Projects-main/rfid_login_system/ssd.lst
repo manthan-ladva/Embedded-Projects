@@ -1,0 +1,58 @@
+C51 COMPILER V9.00   SSD                                                                   08/11/2010 07:54:58 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE SSD
+OBJECT MODULE PLACED IN ssd.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE headers\ssd.c BROWSE DEBUG OBJECTEXTEND PRINT(.\ssd.lst) OBJECT(ssd.obj)
+
+line level    source
+
+   1          #include "ssd.h"
+   2          #include "delay.h"
+   3          //#include<REG51F.H>
+   4          
+   5          //----------------------SSD Functions----------------------//
+   6          void ssd_switch(unsigned int a, unsigned int b, unsigned int c, unsigned int d){                                
+   7   1              SWITCH0 = a;                                                               //SSD_Switch Function To Activate SSD
+   8   1              SWITCH1 = b;
+   9   1              SWITCH2 = c;
+  10   1              SWITCH3 = d;
+  11   1      }
+  12          
+  13          
+  14          void display(unsigned int your_value1, unsigned int your_value2, unsigned int your_value3, unsigned int yo
+             -ur_value4){        
+  15   1              ssd_switch(1,1,1,0);                                                //Display Function for SSD
+  16   1              P0 = your_value1;
+  17   1              Delay(1);
+  18   1              P0 = 0x00;
+  19   1      
+  20   1              ssd_switch(1,1,0,1);
+  21   1              P0 = your_value2;
+  22   1              Delay(1);
+  23   1              P0 = 0x00;
+  24   1      
+  25   1              ssd_switch(1,0,1,1);
+  26   1              P0 = your_value3;
+  27   1              Delay(1);
+  28   1              P0 = 0x00;
+  29   1      
+  30   1              ssd_switch(0,1,1,1);
+  31   1              P0 = your_value4;
+  32   1              Delay(1);
+  33   1              P0 = 0x00;
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    132    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

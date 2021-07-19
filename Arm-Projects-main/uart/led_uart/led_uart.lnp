@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "led_uart.o" --strict --scatter "led_uart.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\led_uart.map" -o "led_uart.axf"

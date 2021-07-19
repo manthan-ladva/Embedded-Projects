@@ -1,0 +1,186 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Prolific\Desktop\Manthan Ladva\8051-Projects\rfid_login_system\rfid_login_system.uvproj
+Project File Date:  08/11/2010
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling dcmotor.c...
+headers\dcmotor.c(3): warning C318: can't open file 'dcmotors.h'
+HEADERS\DCMOTOR.C(7): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(8): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(9): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(10): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(15): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(16): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(17): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(18): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(23): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(24): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(25): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(26): error C202: 'inp4': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling dcmotor.c...
+headers\dcmotor.c(3): warning C318: can't open file 'dcmotors.h'
+HEADERS\DCMOTOR.C(7): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(8): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(9): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(10): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(15): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(16): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(17): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(18): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(23): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(24): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(25): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(26): error C202: 'inp4': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling dcmotor.c...
+headers\dcmotor.c(3): warning C318: can't open file 'dcmotors.h'
+HEADERS\DCMOTOR.C(7): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(8): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(9): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(10): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(15): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(16): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(17): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(18): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(23): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(24): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(25): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(26): error C202: 'inp4': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling dcmotor.c...
+headers\dcmotor.c(3): warning C318: can't open file 'dcmotors.h'
+HEADERS\DCMOTOR.C(7): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(8): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(9): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(10): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(15): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(16): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(17): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(18): error C202: 'inp4': undefined identifier
+HEADERS\DCMOTOR.C(23): error C202: 'inp1': undefined identifier
+HEADERS\DCMOTOR.C(24): error C202: 'inp2': undefined identifier
+HEADERS\DCMOTOR.C(25): error C202: 'inp3': undefined identifier
+HEADERS\DCMOTOR.C(26): error C202: 'inp4': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling dcmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FORWARD?DCMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REVERSE?DCMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?STOP?DCMOTOR
+Program Size: data=122.0 xdata=0 code=2240
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling dcmotor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FORWARD?DCMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REVERSE?DCMOTOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?STOP?DCMOTOR
+Program Size: data=122.0 xdata=0 code=2240
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling brain.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2283
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_BRAIN?BRAIN
+Program Size: data=127.0 xdata=0 code=2283
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling brain.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_BRAIN?BRAIN
+Program Size: data=127.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling brain.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling brain.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling brain.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling brain.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD_BRAIN?BRAIN
+Program Size: data=122.0 xdata=0 code=2329
+creating hex file from "rfid_login_system"...
+"rfid_login_system" - 0 Error(s), 1 Warning(s).

@@ -1,0 +1,22 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Prolific\Desktop\Manthan Ladva\8051-Projects\motors\dcmotor\forward_backward.uvproj
+Project File Date:  08/11/2010
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling forward_backward.c...
+FORWARD_BACKWARD.C(18): error C231: 'en12': redefinition
+FORWARD_BACKWARD.C(18): error C231: 'en12': redefinition
+FORWARD_BACKWARD.C(19): error C231: 'en34': redefinition
+FORWARD_BACKWARD.C(19): error C231: 'en34': redefinition
+Target not created
+Build target 'Target 1'
+compiling forward_backward.c...
+linking...
+Program Size: data=9.0 xdata=0 code=105
+creating hex file from "forward_backward"...
+"forward_backward" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,282 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/28/2021  13:59:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE main.obj TO rfid RAMSIZE (256) CODE (0X0000-0XFFFF)
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C?IMUL)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C?ULCMP)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C?LSTXDATA)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C?LSTKXDATA)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C?STRCMP)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C?MEMSET)
+  C:\KEIL_V5\C51\LIB\C51L.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  rfid (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0034H     UNIT         ?XD?MAIN
+            XDATA   0034H     000FH     UNIT         _XDATA_GROUP_
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0240H     UNIT         ?C?LIB_CODE
+            CODE    0A40H     00F4H     UNIT         ?PR?MAIN?MAIN
+            CODE    0B34H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0BC0H     0068H     UNIT         ?PR?RECEIVESTRING?MAIN
+            CODE    0C28H     0060H     UNIT         ?PR?_DELAY?MAIN
+            CODE    0C88H     004DH     UNIT         ?PR?_COMPARERFID?MAIN
+            CODE    0CD5H     002FH     UNIT         ?CO?MAIN
+            CODE    0D04H     002CH     UNIT         ?C_INITSEG
+            CODE    0D30H     0019H     UNIT         ?PR?_TRANSMITSTRING?MAIN
+            CODE    0D49H     000CH     UNIT         ?PR?INITUART?MAIN
+            CODE    0D55H     0008H     UNIT         ?PR?_TRANSMIT?MAIN
+            CODE    0D5DH     0008H     UNIT         ?PR?RECEIVE?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   rfid (MAIN)
+
+
+SEGMENT                            XDATA_GROUP
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/28/2021  13:59:33  PAGE 2
+
+
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                    0034H    0007H
+  +--> ?PR?INITUART?MAIN
+  +--> ?CO?MAIN
+  +--> ?PR?_TRANSMITSTRING?MAIN
+  +--> ?PR?RECEIVESTRING?MAIN
+  +--> ?PR?_COMPARERFID?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+?PR?_TRANSMITSTRING?MAIN         -----    -----
+  +--> ?CO?MAIN
+  +--> ?PR?_TRANSMIT?MAIN
+
+?PR?RECEIVESTRING?MAIN           003BH    0002H
+  +--> ?PR?RECEIVE?MAIN
+
+?PR?_COMPARERFID?MAIN            003BH    0008H
+
+?PR?_DELAY?MAIN                  003BH    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  rfid (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  X:000DH         PUBLIC        ADefaltString
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:00D8H         PUBLIC        CCON
+  C:0A40H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  C:0D49H         PUBLIC        InitUart
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0BC0H         PUBLIC        ReceiveString
+  C:0D5DH         PUBLIC        Receive
+  D:008DH         PUBLIC        TH1
+  C:0C88H         PUBLIC        _CompareRfid
+  C:0D36H         PUBLIC        _TransmitString
+  C:0D55H         PUBLIC        _Transmit
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  C:0C28H         PUBLIC        _Delay
+  D:00D0H         PUBLIC        PSW
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/28/2021  13:59:33  PAGE 3
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  X:0034H         SYMBOL        AReceiveId
+  X:0037H         SYMBOL        Status
+  X:0039H         SYMBOL        Idx
+  -------         ENDDO         
+  C:0A40H         LINE#         27
+  C:0A40H         LINE#         29
+  C:0A47H         LINE#         30
+  C:0A4BH         LINE#         33
+  C:0A4EH         LINE#         35
+  C:0A57H         LINE#         38
+  C:0A57H         LINE#         39
+  C:0A65H         LINE#         40
+  C:0A6CH         LINE#         42
+  C:0A7AH         LINE#         43
+  C:0A7DH         LINE#         44
+  C:0A99H         LINE#         45
+  C:0A9CH         LINE#         47
+  C:0AD5H         LINE#         48
+  C:0ADCH         LINE#         50
+  C:0AE3H         LINE#         52
+  C:0AE6H         LINE#         53
+  C:0AE8H         LINE#         54
+  C:0AE8H         LINE#         56
+  C:0AEFH         LINE#         58
+  C:0AF2H         LINE#         59
+  C:0AF2H         LINE#         60
+  C:0AFDH         LINE#         61
+  C:0B00H         LINE#         62
+  C:0B09H         LINE#         63
+  C:0B2BH         LINE#         65
+  C:0B2EH         LINE#         66
+  C:0B31H         LINE#         68
+  -------         ENDPROC       MAIN
+  -------         PROC          RECEIVESTRING
+  -------         DO            
+  X:0000H         SYMBOL        AString
+  X:003BH         SYMBOL        Idx
+  -------         ENDDO         
+  C:0BC0H         LINE#         71
+  C:0BC0H         LINE#         73
+  C:0BC7H         LINE#         75
+  C:0BD4H         LINE#         76
+  C:0BDBH         LINE#         77
+  C:0BF0H         LINE#         78
+  C:0C0FH         LINE#         79
+  C:0C21H         LINE#         81
+  C:0C27H         LINE#         82
+  -------         ENDPROC       RECEIVESTRING
+  -------         PROC          _COMPARERFID
+  X:003BH         SYMBOL        Str1
+  X:003EH         SYMBOL        Str2
+  -------         DO            
+  X:0041H         SYMBOL        Status
+  -------         ENDDO         
+  C:0C88H         LINE#         84
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/28/2021  13:59:33  PAGE 4
+
+
+  C:0C93H         LINE#         85
+  C:0C9AH         LINE#         87
+  C:0CBCH         LINE#         88
+  C:0CC5H         LINE#         90
+  C:0CCCH         LINE#         92
+  C:0CD4H         LINE#         93
+  -------         ENDPROC       _COMPARERFID
+  -------         PROC          INITUART
+  C:0D49H         LINE#         95
+  C:0D49H         LINE#         96
+  C:0D4CH         LINE#         97
+  C:0D4FH         LINE#         98
+  C:0D51H         LINE#         99
+  C:0D54H         LINE#         100
+  -------         ENDPROC       INITUART
+  -------         PROC          _TRANSMIT
+  D:0007H         SYMBOL        Abyte
+  C:0D55H         LINE#         102
+  C:0D55H         LINE#         103
+  C:0D57H         LINE#         104
+  C:0D5AH         LINE#         105
+  C:0D5CH         LINE#         106
+  -------         ENDPROC       _TRANSMIT
+  C:0D30H         SYMBOL        L?0037
+  -------         PROC          L?0036
+  -------         ENDPROC       L?0036
+  C:0D30H         SYMBOL        L?0037
+  -------         PROC          _TRANSMITSTRING
+  D:0001H         SYMBOL        Abyte
+  C:0D36H         LINE#         108
+  C:0D36H         LINE#         109
+  C:0D3CH         LINE#         110
+  C:0D3FH         LINE#         111
+  C:0D46H         LINE#         112
+  C:0D48H         LINE#         113
+  -------         ENDPROC       _TRANSMITSTRING
+  -------         PROC          RECEIVE
+  -------         DO            
+  D:0007H         SYMBOL        Abyte
+  -------         ENDDO         
+  C:0D5DH         LINE#         115
+  C:0D5DH         LINE#         118
+  C:0D60H         LINE#         119
+  C:0D62H         LINE#         120
+  C:0D64H         LINE#         122
+  C:0D64H         LINE#         123
+  -------         ENDPROC       RECEIVE
+  -------         PROC          _DELAY
+  X:003BH         SYMBOL        time
+  -------         DO            
+  X:003FH         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0C28H         LINE#         125
+  C:0C2EH         LINE#         129
+  C:0C58H         LINE#         130
+  C:0C66H         LINE#         131
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/28/2021  13:59:33  PAGE 5
+
+
+  C:0C87H         LINE#         132
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDPTR
+  C:0800H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?IMUL
+  C:0819H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?ULCMP
+  C:082BH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+  -------         MODULE        ?C?LSTXDATA
+  C:083CH         PUBLIC        ?C?LSTXDATA
+  -------         ENDMOD        ?C?LSTXDATA
+
+  -------         MODULE        ?C?LSTKXDATA
+  C:0848H         PUBLIC        ?C?LSTKXDATA
+  -------         ENDMOD        ?C?LSTKXDATA
+
+  -------         MODULE        ?C?STRCMP
+  C:09F7H         PUBLIC        ?C?STRCMP
+  -------         ENDMOD        ?C?STRCMP
+
+  -------         MODULE        ?C?MEMSET
+  C:0A14H         PUBLIC        ?C?MEMSET
+  -------         ENDMOD        ?C?MEMSET
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0298H BYTE (32%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=67 code=1384
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

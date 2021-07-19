@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="F:\Embedded Prolific\STM32-Projects\Led"/>
+		<item value="F:\Embedded Prolific\STM32-Projects\Led\Official_demo_led_stm"/>
+		<item value="F:\Embedded Prolific\Stm32\Led\First_Led_project"/>
+	</list>
+</section>

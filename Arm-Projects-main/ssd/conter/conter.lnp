@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "conter.o" --strict --scatter "conter.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\conter.map" -o "conter.axf"

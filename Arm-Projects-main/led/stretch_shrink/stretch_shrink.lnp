@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "stretch_shrink.o" --strict --scatter "stretch_shrink.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\stretch_shrink.map" -o "stretch_shrink.axf"

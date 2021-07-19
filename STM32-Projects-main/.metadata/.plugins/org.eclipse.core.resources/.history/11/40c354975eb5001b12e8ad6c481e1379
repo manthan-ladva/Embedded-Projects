@@ -1,0 +1,44 @@
+#include "stm32f4xx.h"
+
+void init_gpio(void);
+void Delay(unsigned int time);
+
+
+GPIO_InitTypeDef All_Led;
+
+int main(void)
+{
+	unsigned int i;
+	init_gpio();
+
+	while (1)
+	{
+		for(i=0;i<5;i++)
+		{
+			GPIO_WriteBit(GPIOD, GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15, Bit_SET);
+			Delay(100);
+			GPIO_WriteBit(GPIOD, GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15, Bit_RESET);
+			Delay(100);
+		}
+		GPIO_WriteBit(GPIOD, GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15, Bit_RESET);
+		Delay(2000);
+	}
+}
+
+
+void init_gpio(void)
+{
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+
+	All_Led.GPIO_Pin = GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
+	All_Led.GPIO_Mode = GPIO_Mode_OUT;
+	All_Led.GPIO_Speed = GPIO_Speed_50MHz;
+	All_Led.GPIO_OType = GPIO_OType_PP;
+}
+
+
+void Delay(unsigned int time)
+{
+	unsigned int i;
+	for(i=0; i<time*4000; i++);
+}

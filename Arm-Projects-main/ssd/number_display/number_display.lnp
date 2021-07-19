@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "number_display.o" --strict --scatter "number_display.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\number_display.map" -o "number_display.axf"

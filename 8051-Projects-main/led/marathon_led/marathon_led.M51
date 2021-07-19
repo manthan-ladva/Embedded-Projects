@@ -1,0 +1,155 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/04/2021  04:06:50  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE marathon_led.obj TO marathon_led RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  marathon_led.obj (MARATHON_LED)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
+
+
+LINK MAP OF MODULE:  marathon_led (MARATHON_LED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0012H     UNIT         _DATA_GROUP_
+            IDATA   001AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0071H     UNIT         ?PR?_MARATHON?MARATHON_LED
+            CODE    0871H     0058H     UNIT         ?PR?_DELAY?MARATHON_LED
+            CODE    08C9H     0037H     UNIT         ?PR?MAIN?MARATHON_LED
+            CODE    0900H     0011H     UNIT         ?C?LIB_CODE
+            CODE    0911H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   marathon_led (MARATHON_LED)
+
+
+SEGMENT                              DATA_GROUP 
+  +--> CALLED SEGMENT              START    LENGTH
+--------------------------------------------------
+?C_C51STARTUP                      -----    -----
+  +--> ?PR?MAIN?MARATHON_LED
+
+?PR?MAIN?MARATHON_LED              0008H    0002H
+  +--> ?PR?_MARATHON?MARATHON_LED
+  +--> ?PR?_DELAY?MARATHON_LED
+
+?PR?_MARATHON?MARATHON_LED         000AH    0008H
+  +--> ?PR?_DELAY?MARATHON_LED
+
+?PR?_DELAY?MARATHON_LED            0012H    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  marathon_led (MARATHON_LED)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/04/2021  04:06:50  PAGE 2
+
+
+  ----------------------------------
+
+  -------         MODULE        MARATHON_LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:087CH         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:08C9H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0800H         PUBLIC        _marathon
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        loop
+  -------         ENDDO         
+  C:08C9H         LINE#         6
+  C:08C9H         LINE#         7
+  C:08CEH         LINE#         8
+  C:08D9H         LINE#         9
+  C:08E0H         LINE#         10
+  C:08E8H         LINE#         11
+  C:08EEH         LINE#         12
+  C:08F1H         LINE#         13
+  C:08F9H         LINE#         14
+  C:08FCH         LINE#         15
+  C:08FCH         LINE#         16
+  C:08FEH         LINE#         17
+  -------         ENDPROC       MAIN
+  C:0874H         SYMBOL        L?0028
+  -------         PROC          L?0027
+  -------         ENDPROC       L?0027
+  C:0874H         SYMBOL        L?0028
+  -------         PROC          _DELAY
+  D:0012H         SYMBOL        time
+  -------         DO            
+  D:0016H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:087CH         LINE#         20
+  C:0884H         LINE#         24
+  C:08A3H         LINE#         25
+  C:08A6H         LINE#         27
+  C:08B1H         LINE#         28
+  C:08C8H         LINE#         29
+  -------         ENDPROC       _DELAY
+  -------         PROC          _MARATHON
+  D:000AH         SYMBOL        no_of_led
+  -------         DO            
+  D:000CH         SYMBOL        i
+  D:000EH         SYMBOL        j
+  D:0010H         SYMBOL        value
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/04/2021  04:06:50  PAGE 3
+
+
+  -------         ENDDO         
+  C:0800H         LINE#         31
+  C:0804H         LINE#         32
+  C:080AH         LINE#         34
+  C:080AH         LINE#         35
+  C:080DH         LINE#         37
+  C:081EH         LINE#         38
+  C:0829H         LINE#         39
+  C:0829H         LINE#         40
+  C:082CH         LINE#         42
+  C:083EH         LINE#         43
+  C:084DH         LINE#         44
+  C:0857H         LINE#         45
+  C:0859H         LINE#         46
+  C:085CH         LINE#         47
+  C:0866H         LINE#         48
+  C:0866H         LINE#         49
+  C:0870H         LINE#         50
+  -------         ENDPROC       _MARATHON
+  -------         ENDMOD        MARATHON_LED
+
+  -------         MODULE        ?C?ULCMP
+  C:0900H         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0100H BYTE (12%) *
+******************************************************************************
+
+Program Size: data=27.0 xdata=0 code=288
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

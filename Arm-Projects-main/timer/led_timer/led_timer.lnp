@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "led_timer.o" --strict --scatter "led_timer.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\led_timer.map" -o "led_timer.axf"

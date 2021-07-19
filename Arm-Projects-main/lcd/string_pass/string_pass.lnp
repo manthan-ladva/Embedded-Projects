@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "string_pass.o" "delay.o" "ssd.o" "uart.o" --strict --scatter "string_pass.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\string_pass.map" -o "string_pass.axf"

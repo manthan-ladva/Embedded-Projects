@@ -1,0 +1,1 @@
+-c --device DARMP -D__EVAL -g -O0 --apcs=interwork -I "C:\Keil_v5\ARM\INC\Philips" -o "increment_decrement.o" --omf_browse "increment_decrement.crf" --depend "increment_decrement.d" "increment_decrement.c"

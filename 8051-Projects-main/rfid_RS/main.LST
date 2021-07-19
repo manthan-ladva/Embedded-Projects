@@ -1,0 +1,159 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              03/28/2021 13:59:32 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REG51F.H>
+   2          #include <string.h>
+   3          
+   4          //--------------- Preprocessor Declaration ---------------//
+   5          #define MAX_LEN_RFID_STRING             12
+   6          #define Newline         TransmitString("\r\n");
+   7          #define DEBUG
+   8          
+   9          //------------- Functions Prototypes ---------------------//
+  10          void InitUart(void);
+  11          void Transmit(unsigned char Abyte);
+  12          void TransmitString(unsigned char *Abyte);
+  13          unsigned char Receive(void);
+  14          void Delay(unsigned long int time);
+  15          
+  16          unsigned char *ReceiveString(void);
+  17          int CompareRfid(unsigned char *Str1, unsigned char *Str2);
+  18          
+  19          //-------------------- Variable Declarations -----------------//
+  20          unsigned char ADefaltString[][MAX_LEN_RFID_STRING+1] = {
+  21                  "1234567890ab",
+  22                  "abcdefghijkl",
+  23                  "12345abcdefg",
+  24          };
+  25          
+  26          
+  27          void main(void) {
+  28   1              unsigned char *AReceiveId;
+  29   1              int Status = 0;
+  30   1              int Idx=0;
+  31   1      
+  32   1              //memset(AReceiveId, 0, sizeof(AReceiveId));
+  33   1              InitUart();
+  34   1      #ifdef DEBUG
+  35   1              TransmitString("RFID Testing...\r\n");
+  36   1      #endif
+  37   1      
+  38   1              while(1) {
+  39   2                      AReceiveId = ReceiveString();
+  40   2                      for (Idx=0; Idx<3; Idx++) {
+  41   3      #ifdef DEBUG
+  42   3                              TransmitString(AReceiveId);
+  43   3                              Newline;
+  44   3                              TransmitString(ADefaltString[Idx]);
+  45   3                              Newline;
+  46   3      #endif
+  47   3                              Status = CompareRfid(AReceiveId, ADefaltString[Idx]);
+  48   3                              if (1 == Status) {
+  49   4      #ifdef DEBUG
+  50   4                                      TransmitString("Compared\r\n");
+  51   4      #endif
+  52   4                                      P0 = 0x55;
+  53   4                              }
+  54   3                              else {
+  55   4      #ifdef DEBUG
+C51 COMPILER V9.59.0.0   MAIN                                                              03/28/2021 13:59:32 PAGE 2   
+
+  56   4                                      TransmitString("Not Compared\r\n");
+  57   4      #endif
+  58   4                                      P0 = 0xAA;
+  59   4                              }
+  60   3                              Delay(500);
+  61   3                              P0 = 0x00;
+  62   3                              Delay(500);
+  63   3                      }
+  64   2      #ifdef DEBUG
+  65   2                      Newline;
+  66   2                      Newline;
+  67   2      #endif
+  68   2              }
+  69   1      }
+  70          
+  71          unsigned char *ReceiveString(void) {
+  72   1              static unsigned char AString[MAX_LEN_RFID_STRING + 1];
+  73   1              int Idx = 0;
+  74   1      
+  75   1              memset(AString, 0, sizeof(AString));
+  76   1              for (Idx=0; Idx<MAX_LEN_RFID_STRING; Idx++) {
+  77   2                      AString[Idx] = Receive();
+  78   2              }
+  79   1              AString[Idx] = '\0';
+  80   1              
+  81   1              return (AString);
+  82   1      }
+  83          
+  84          int CompareRfid(unsigned char *Str1, unsigned char *Str2) {
+  85   1              int Status = 0;
+  86   1      
+  87   1              if (0 == strcmp(Str1, Str2))
+  88   1                      Status = 1;
+  89   1              else
+  90   1                      Status = 0;
+  91   1      
+  92   1              return (Status);        
+  93   1      }
+  94          
+  95          void InitUart(void) {
+  96   1              TMOD = 0x20;
+  97   1              TH1 = 0xFD;
+  98   1              TR1 = 1;
+  99   1              SCON = 0x50;
+ 100   1      }
+ 101          
+ 102          void Transmit(unsigned char Abyte) {
+ 103   1              SBUF = Abyte;   
+ 104   1              while (0 == TI);
+ 105   1              TI = 0;
+ 106   1      }
+ 107          
+ 108          void TransmitString(unsigned char *Abyte) {
+ 109   1              while ('\0' != *Abyte) {
+ 110   2                      Transmit(*Abyte);
+ 111   2                      Abyte++;
+ 112   2              }
+ 113   1      }
+ 114          
+ 115          unsigned char Receive(void) {
+ 116   1              unsigned char Abyte;
+ 117   1      
+C51 COMPILER V9.59.0.0   MAIN                                                              03/28/2021 13:59:32 PAGE 3   
+
+ 118   1              while(0 == RI);
+ 119   1              Abyte = SBUF;
+ 120   1              RI = 0;
+ 121   1      
+ 122   1              return (Abyte);
+ 123   1      }
+ 124          
+ 125          void Delay(unsigned long int time) {                      //Delay Function
+ 126   1              unsigned long int i;
+ 127   1              unsigned int j;
+ 128   1      
+ 129   1              for(i=0;i<time;i++){
+ 130   2                      for(j=0;j<120;j++){}
+ 131   2              }
+ 132   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    574    ----
+   CONSTANT SIZE    =     47    ----
+   XDATA SIZE       =     52      25
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

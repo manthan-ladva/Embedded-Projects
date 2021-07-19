@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\prolific\Desktop\Manthan Ladva\Arm-Projects\led\stretch_shrink\stretch_shrink.uvproj
+Project File Date:  04/05/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling Startup.s...
+compiling stretch_shrink.c...
+stretch_shrink.c(12): error:  #268: declaration may not appear after executable statement in block
+stretch_shrink.c(13): error:  #268: declaration may not appear after executable statement in block
+stretch_shrink.c(14): error:  #268: declaration may not appear after executable statement in block
+stretch_shrink.c(18): error:  #65: expected a ";"
+stretch_shrink.c(35): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(12): error:  #268: declaration may not appear after executable statement in block
+stretch_shrink.c(13): error:  #268: declaration may not appear after executable statement in block
+stretch_shrink.c(14): error:  #268: declaration may not appear after executable statement in block
+stretch_shrink.c(35): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(35): warning:  #1-D: last line of file ends without a newline
+linking...
+stretch_shrink.axf: Error: L6218E: Undefined symbol main (referred from rtentry2.o).
+Target not created
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(9): warning:  #951-D: return type of function "main" must be "int"
+stretch_shrink.c(40): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=876 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+"stretch_shrink.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(9): warning:  #951-D: return type of function "main" must be "int"
+stretch_shrink.c(40): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=876 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+"stretch_shrink.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(9): warning:  #951-D: return type of function "main" must be "int"
+stretch_shrink.c(47): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=924 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+"stretch_shrink.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(9): warning:  #951-D: return type of function "main" must be "int"
+stretch_shrink.c(47): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=928 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+"stretch_shrink.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(9): warning:  #951-D: return type of function "main" must be "int"
+stretch_shrink.c(47): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=928 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+"stretch_shrink.axf" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling stretch_shrink.c...
+stretch_shrink.c(9): warning:  #951-D: return type of function "main" must be "int"
+stretch_shrink.c(47): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=924 RO-data=16 RW-data=0 ZI-data=1256  
+FromELF: creating hex file...
+"stretch_shrink.axf" - 0 Error(s), 2 Warning(s).

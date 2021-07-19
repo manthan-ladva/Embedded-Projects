@@ -1,0 +1,180 @@
+C51 COMPILER V9.00   BRAIN                                                                 08/11/2010 08:42:51 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE BRAIN
+OBJECT MODULE PLACED IN brain.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE headers\brain.c BROWSE DEBUG OBJECTEXTEND PRINT(.\brain.lst) OBJECT(brain.o
+                    -bj)
+
+line level    source
+
+   1          #include<REG51F.H>
+   2          #include<string.h>
+   3          #include "lcd.h"
+   4          #include "ssd.h"
+   5          #include "uart.h"
+   6          #include "delay.h"
+   7          #include "brain.h"
+   8          #include "dcmotor.h"
+   9          
+  10          
+  11          //-------------------Preprocessor Declaration---------------//
+  12          #define Newline         Transmit_String("\r\n");
+  13          
+  14          
+  15          //--------------------Function Declaration------------------//
+  16          int Compare_RFID(unsigned char *Str1);
+  17          void ssd_brain(void);
+  18          void lcd_brain(void);
+  19          
+  20          
+  21          //--------------------Variable Declaration------------------//
+  22          unsigned char ADefaltString[][MAX_LEN_RFID_STRING+1] = { 
+  23                  "510060156B4F",
+  24                  "51005ECF35F5",
+  25          };//    "5100702D979B",
+  26          //};                                                                                              //RFID Card Database
+  27                                                                                                                     
+  28          unsigned int pass_value[] = {0xCE, 0xEE, 0xB6, 0xB6}; //PASS SSD Values
+  29          unsigned int fail_value[] = {0x8E, 0xEE, 0x60, 0x1C}; //FAIL SSD Values
+  30          
+  31          
+  32          //----------------------RFID Comparison Function----------------------//
+  33          int Compare_RFID(char *Str1){              
+  34   1              int Idx, Status = 0;                                                          //Compare RFID Function
+  35   1              for (Idx=0; Idx<sizeof(ADefaltString)/sizeof(ADefaltString[0]); Idx++) {         
+  36   2                      
+  37   2                      Transmit_String(Str1);                     //Here Idx<length of 2 dimension string
+  38   2                      Newline;
+  39   2                      Transmit_String(ADefaltString[Idx]);
+  40   2                      Newline;
+  41   2                      
+  42   2                      if(0 == strcmp(Str1, ADefaltString[Idx])){
+  43   3                              Status = 1;
+  44   3                              break;
+  45   3                      }
+  46   2                      else{
+  47   3                              Status = 0;
+  48   3                      }
+  49   2              }
+  50   1              return (Status);
+  51   1      }
+  52          
+  53          
+  54          void ssd_brain(void){                                                            //Main Function for SSD Output
+C51 COMPILER V9.00   BRAIN                                                                 08/11/2010 08:42:51 PAGE 2   
+
+  55   1              unsigned char *AReceiveId;                                       
+  56   1              int i, Status = 0;
+  57   1      
+  58   1              Init_Uart();
+  59   1              while(1) {
+  60   2                      AReceiveId = Receive_String();
+  61   2                      Status = Compare_RFID(AReceiveId);
+  62   2      
+  63   2                      if (1 == Status) {
+  64   3                              for(i=0;i<100;i++){
+  65   4                                      display(pass_value[0], pass_value[1], pass_value[2], pass_value[3]);
+  66   4                                      forward();                                 //DcMotor Forward
+  67   4                              }
+  68   3                              Delay(1000);
+  69   3                              stop();                         //DcMotor Stop
+  70   3                              Delay(1000);
+  71   3                              reverse();                 //DcMotor Reverse
+  72   3                              Delay(1000);
+  73   3                              stop();
+  74   3                      }
+  75   2                      else {
+  76   3                              for(i=0;i<100;i++){
+  77   4                                      display(fail_value[0], fail_value[1], fail_value[2], fail_value[3]);
+  78   4                              }
+  79   3                      }
+  80   2              }
+  81   1      }
+  82          
+  83          
+  84          void lcd_brain(void){                                   //Main Function for LCD Output
+  85   1              unsigned char *AReceiveId;
+  86   1              int i, Status = 0;
+  87   1      
+  88   1              Init_Uart();
+  89   1              init_lcd();
+  90   1      
+  91   1              display_lcd(0,0x83);
+  92   1              lcd_string("Welcome To");
+  93   1              display_lcd(0,0xC0);
+  94   1              lcd_string("Manthan Security");
+  95   1      
+  96   1              Delay(500);                                                      
+  97   1      
+  98   1              while(1){
+  99   2                      display_lcd(0,0x01);
+ 100   2              
+ 101   2                      display_lcd(0,0x83);
+ 102   2                      lcd_string("Please Scan");
+ 103   2                      display_lcd(0,0xC2);
+ 104   2                      lcd_string("Your ID Card");
+ 105   2                      
+ 106   2                      for(i=0;i<3;i++){                                                               //For-loop is used for TryAgain in Else part
+ 107   3                              AReceiveId = Receive_String();
+ 108   3                              Status = Compare_RFID(AReceiveId);                      
+ 109   3      
+ 110   3                              if (1 == Status) {
+ 111   4                                      display_lcd(0,0x01);
+ 112   4              
+ 113   4                                      display_lcd(0,0x81);
+ 114   4                                      lcd_string("Access Granted");
+ 115   4                                      display_lcd(0,0xC0);
+ 116   4                                      lcd_string("You May Proceed");
+C51 COMPILER V9.00   BRAIN                                                                 08/11/2010 08:42:51 PAGE 3   
+
+ 117   4      
+ 118   4                                      forward();                                      //DcMotor Forward
+ 119   4                                      Delay(3000);
+ 120   4                                      stop();                                         //DcMotor Stop
+ 121   4                                      Delay(1000);
+ 122   4                                      reverse();                                      //DcMotor Reverse
+ 123   4                                      Delay(3000);
+ 124   4                                      stop();
+ 125   4              
+ 126   4                                      Delay(750);
+ 127   4                                      display_lcd(0,0x01);
+ 128   4                                      break;
+ 129   4                              }
+ 130   3                              else {
+ 131   4                                      char try_again[13] = "Try Again ";
+ 132   4                                      char c [][2] = {"1", "2", "3"};
+ 133   4                                      char of_3 [6] = " Of 3";
+ 134   4                                      strcat(try_again, c[i]);
+ 135   4                                      strcat(try_again, of_3);
+ 136   4      
+ 137   4                                      display_lcd(0,0x01);
+ 138   4              
+ 139   4                                      display_lcd(0,0x82);
+ 140   4                                      lcd_string("Access Denied");
+ 141   4                                      display_lcd(0,0xC0);
+ 142   4                                      lcd_string(try_again);
+ 143   4      
+ 144   4                                      if(i==2){
+ 145   5                                              Delay(500);
+ 146   5                                              break;
+ 147   5                                      }
+ 148   4                              }
+ 149   3      
+ 150   3                      }
+ 151   2              }
+ 152   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    686    ----
+   CONSTANT SIZE    =    126    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     42      40
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

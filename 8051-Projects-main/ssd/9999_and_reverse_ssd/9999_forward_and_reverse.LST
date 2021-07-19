@@ -1,0 +1,165 @@
+C51 COMPILER V9.59.0.0   9999_FORWARD_AND_REVERSE                                          08/11/2010 00:41:52 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE 9999_FORWARD_AND_REVERSE
+OBJECT MODULE PLACED IN 9999_forward_and_reverse.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 9999_forward_and_reverse.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<REG51F.H>
+   2          
+   3          sbit SWITCH0 = P2^0;
+   4          sbit SWITCH1 = P2^1;
+   5          sbit SWITCH2 = P2^2;
+   6          sbit SWITCH3 = P2^3;
+   7          
+   8          void delay(unsigned long int time){                       //Delay Function
+   9   1              unsigned long int i;
+  10   1              unsigned int j;
+  11   1      
+  12   1              for(i=0;i<time;i++){
+  13   2                      for(j=0;j<120;j++){}
+  14   2              }
+  15   1      }
+  16          
+  17          void ssd_switch(unsigned int a, unsigned int b, unsigned int c, unsigned int d){
+  18   1              SWITCH0 = a;
+  19   1              SWITCH1 = b;
+  20   1              SWITCH2 = c;
+  21   1              SWITCH3 = d;
+  22   1      }
+  23          
+  24          void forward(){
+  25   1              unsigned long int value_array[] = {0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xF6}; //0123456
+             -789
+  26   1              unsigned int i,j,k,l,m;
+  27   1      
+  28   1              for(i=0;i<10;i++){
+  29   2                      for(j=0;j<10;j++){
+  30   3                              for(k=0;k<10;k++){
+  31   4                                      for(l=0;l<10;l++){
+  32   5                                              //for(m=0;m<20;m++){
+  33   5                                              ssd_switch(1,1,1,0);
+  34   5                                              P0 = value_array[i];
+  35   5                                              delay(1);
+  36   5                                              P0 = 0x00;
+  37   5                      
+  38   5                                              ssd_switch(1,1,0,1);
+  39   5                                              P0 = value_array[j];
+  40   5                                              delay(1);
+  41   5                                              P0 = 0x00;
+  42   5                      
+  43   5                                              ssd_switch(1,0,1,1);
+  44   5                                              P0 = value_array[k];
+  45   5                                              delay(1);
+  46   5                                              P0 = 0x00;
+  47   5              
+  48   5                                              ssd_switch(0,1,1,1);
+  49   5                                              P0 = value_array[l];
+  50   5                                              delay(1);
+  51   5                                              P0 = 0x00;
+  52   5      
+  53   5                                                      //ssd_switch(0,1,1,1);
+  54   5                                                      //P0 = 0x01;
+C51 COMPILER V9.59.0.0   9999_FORWARD_AND_REVERSE                                          08/11/2010 00:41:52 PAGE 2   
+
+  55   5                                                      //delay(1);
+  56   5                                                      //P0 = 0x00;
+  57   5                                              //}
+  58   5                                      }
+  59   4                              }
+  60   3                      }
+  61   2              }
+  62   1      }
+*** WARNING C280 IN LINE 26 OF 9999_forward_and_reverse.c: 'm': unreferenced local variable
+  63          
+  64          void backward(){
+  65   1              unsigned long int value_array[] = {0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xF6}; //0123456
+             -789
+  66   1              int i,j,k,l,m;
+  67   1      
+  68   1              for(i=9;i>=0;i--){
+  69   2                      for(j=9;j>=0;j--){
+  70   3                              for(k=9;k>=0;k--){
+  71   4                                      for(l=9;l>=0;l--){
+  72   5                                              //for(m=0;m<20;m++){
+  73   5                                              ssd_switch(1,1,1,0);
+  74   5                                              P0 = value_array[i];
+  75   5                                              delay(1);
+  76   5                                              P0 = 0x00;
+  77   5                      
+  78   5                                              ssd_switch(1,1,0,1);
+  79   5                                              P0 = value_array[j];
+  80   5                                              delay(1);
+  81   5                                              P0 = 0x00;
+  82   5                      
+  83   5                                              ssd_switch(1,0,1,1);
+  84   5                                              P0 = value_array[k];
+  85   5                                              delay(1);
+  86   5                                              P0 = 0x00;
+  87   5              
+  88   5                                              ssd_switch(0,1,1,1);
+  89   5                                              P0 = value_array[l];
+  90   5                                              delay(1);
+  91   5                                              P0 = 0x00;
+  92   5      
+  93   5                                                      //ssd_switch(0,1,1,1);
+  94   5                                                      //P0 = 0x01;
+  95   5                                                      //delay(1);
+  96   5                                                      //P0 = 0x00;
+  97   5                                              //}
+  98   5                                      }
+  99   4                              }
+ 100   3                      }
+ 101   2              }
+ 102   1      }
+*** WARNING C280 IN LINE 66 OF 9999_forward_and_reverse.c: 'm': unreferenced local variable
+ 103          
+ 104          void reset(){
+ 105   1              ssd_switch(1,1,1,0);
+ 106   1              P0 = 0xFF;
+ 107   1              delay(1);
+ 108   1              //P0 = 0x00;
+ 109   1      
+ 110   1              ssd_switch(1,1,0,1);
+ 111   1              P0 = 0xFF;
+ 112   1              delay(1);
+ 113   1              //P0 = 0x00;
+C51 COMPILER V9.59.0.0   9999_FORWARD_AND_REVERSE                                          08/11/2010 00:41:52 PAGE 3   
+
+ 114   1      
+ 115   1              ssd_switch(1,0,1,1);
+ 116   1              P0 = 0xFF;
+ 117   1              delay(1);
+ 118   1              //P0 = 0x00;
+ 119   1      
+ 120   1              ssd_switch(0,1,1,1);
+ 121   1              P0 = 0xFF;
+ 122   1              delay(1);
+ 123   1              //P0 = 0x00;
+ 124   1      }
+ 125          
+ 126          void main(){
+ 127   1              int i=0;
+ 128   1              while(1){
+ 129   2                      forward();
+ 130   2                      for(i=0;i<200;i++){reset();}
+ 131   2                      backward();
+ 132   2                      for(i=0;i<200;i++){reset();}
+ 133   2              }
+ 134   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    687    ----
+   CONSTANT SIZE    =     80    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----     118
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

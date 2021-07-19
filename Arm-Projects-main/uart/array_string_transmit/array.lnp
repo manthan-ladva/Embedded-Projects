@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "array.o" --strict --scatter "array.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\array.map" -o "array.axf"

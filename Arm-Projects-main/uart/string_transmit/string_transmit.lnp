@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "string_transmit.o" --strict --scatter "string_transmit.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\string_transmit.map" -o "string_transmit.axf"
